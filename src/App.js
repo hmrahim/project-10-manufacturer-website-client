@@ -5,6 +5,8 @@ import Home from "./Components/Pages/Home/Home";
 import { Route, Routes } from "react-router-dom";
 import Login from "./Components/Pages/Auth/Login/Login";
 import Signup from "./Components/Pages/Auth/Signup/Signup";
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
@@ -17,6 +19,7 @@ function App() {
         </Routes>
         
       </Header>
+      <ToastContainer/>
     </div>
   );
 }

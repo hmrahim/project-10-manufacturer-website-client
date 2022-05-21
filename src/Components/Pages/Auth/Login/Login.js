@@ -18,14 +18,14 @@ const Login = () => {
       <h1 className="text-4xl text-center font-semibold py-4">Login</h1>
       <div className="p-5">
         <form onSubmit={handleSubmit(onSubmit)} action="">
-          <div class="form-control w-full ">
-            <label class="label">
-              <span class="label-text"> Email</span>
+          <div className="form-control w-full ">
+            <label className="label">
+              <span className="label-text"> Email</span>
             </label>
             <input
               type="text"
               placeholder="Type here"
-              class="input input-bordered w-full "
+              className="input input-bordered w-full "
               {...register("email", {
                 required: {
                   value: true,
@@ -37,27 +37,27 @@ const Login = () => {
                 },
               })}
             />
-            <label class="label">
+            <label className="label">
               {errors?.email?.type === "required" && (
-                <span class="label-text-alt text-red-500">
+                <span className="label-text-alt text-red-500">
                   {errors.email.message}
                 </span>
               )}
               {errors?.email?.type === "pattern" && (
-                <span class="label-text-alt text-red-500">
+                <span className="label-text-alt text-red-500">
                   {errors.email.message}
                 </span>
               )}
             </label>
           </div>
-          <div class="form-control w-full ">
-            <label class="label">
-              <span class="label-text">Password?</span>
+          <div className="form-control w-full ">
+            <label className="label">
+              <span className="label-text">Password?</span>
             </label>
             <input
               type="text"
               placeholder="Type here"
-              class="input input-bordered w-full "
+              className="input input-bordered w-full "
               {...register("password", {
                 required: {
                   value: true,
@@ -69,36 +69,36 @@ const Login = () => {
                 },
               })}
             />
-            <label class="label">
+            <label className="label">
               {errors?.password?.type === "required" && (
-                <span class="label-text-alt text-red-500">
+                <span className="label-text-alt text-red-500">
                   {errors.password.message}
                 </span>
               )}
               {errors?.password?.type === "minLength" && (
-                <span class="label-text-alt text-red-500">
+                <span className="label-text-alt text-red-500">
                   {errors.password.message}
                 </span>
               )}
             </label>
           </div>
-          <label class="label">
-              <Link to="/forgotpass" class="label-text-alt link link-hover">
+          <label className="label">
+              <Link to="/forgotpass" className="label-text-alt link link-hover">
                 Forgot password?
               </Link>
             </label>
-          <label class="label">
-              <Link to="/signup" class="label-text-alt link link-hover">
+          <label className="label">
+              <Link to="/signup" className="label-text-alt link link-hover">
                 Create a new account
               </Link>
             </label>
-          <div class="form-control w-full mt-5">
+          <div className="form-control w-full mt-5">
             <button className="btn btn-primary">Logn</button>
            
           </div>
-          <div class="divider">OR</div>
+          <div className="divider">OR</div>
         </form>
-        <div class="form-control w-full mt-5">
+        <div className="form-control w-full mt-5">
             <button className="btn btn-outline">Continue with google</button>
            
           </div>

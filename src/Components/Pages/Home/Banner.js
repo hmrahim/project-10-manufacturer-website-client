@@ -11,7 +11,7 @@ const Banner = () => {
     ]
   return (
     <div>
-      <div class="carousel w-full">
+      <div className="carousel w-full">
           {
               banner.map(item=>  <BannerItem banner={item} />)
           }

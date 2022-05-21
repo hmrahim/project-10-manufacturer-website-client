@@ -4,14 +4,14 @@ const Summary = () => {
   return (
    <div className="w-11/12 mx-auto my-20">
        <h1 className="text-center text-4xl font-semibold my-10">Busness Summary</h1>
-        <div class="stats shadow flex justify-center items-center gap-10">
-      <div class="stat">
-        <div class="stat-figure text-primary">
+        <div className="stats shadow flex justify-center items-center gap-10">
+      <div className="stat">
+        <div className="stat-figure text-primary">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
-            class="inline-block w-8 h-8 stroke-current"
+            className="inline-block w-8 h-8 stroke-current"
           >
             <path
               stroke-linecap="round"
@@ -21,18 +21,18 @@ const Summary = () => {
             ></path>
           </svg>
         </div>
-        <div class="stat-title">We Served </div>
-        <div class="stat-value text-primary">100+</div>
-        <div class="stat-desc">Customar</div>
+        <div className="stat-title">We Served </div>
+        <div className="stat-value text-primary">100+</div>
+        <div className="stat-desc">Customar</div>
       </div>
 
-      <div class="stat">
-        <div class="stat-figure text-secondary">
+      <div className="stat">
+        <div className="stat-figure text-secondary">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
-            class="inline-block w-8 h-8 stroke-current"
+            className="inline-block w-8 h-8 stroke-current"
           >
             <path
               stroke-linecap="round"
@@ -42,22 +42,22 @@ const Summary = () => {
             ></path>
           </svg>
         </div>
-        <div class="stat-title">We have</div>
-        <div class="stat-value text-secondary">120M+</div>
-        <div class="stat-desc">Annual revenue</div>
+        <div className="stat-title">We have</div>
+        <div className="stat-value text-secondary">120M+</div>
+        <div className="stat-desc">Annual revenue</div>
       </div>
 
-      <div class="stat">
-        <div class="stat-figure text-secondary">
-          <div class="avatar online">
-            <div class="w-16 rounded-full">
+      <div className="stat">
+        <div className="stat-figure text-secondary">
+          <div className="avatar online">
+            <div className="w-16 rounded-full">
               <img src="https://api.lorem.space/image/face?w=128&h=128" />
             </div>
           </div>
         </div>
-        <div class="stat-value">33K+</div>
-        <div class="stat-title">Reviews</div>
-        <div class="stat-desc text-secondary">31 tasks remaining</div>
+        <div className="stat-value">33K+</div>
+        <div className="stat-title">Reviews</div>
+        <div className="stat-desc text-secondary">31 tasks remaining</div>
       </div>
     </div>
    </div>
