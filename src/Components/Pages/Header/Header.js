@@ -1,19 +1,23 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const Header = ({children}) => {
   const menu = (
     <>
       <li>
-        <a>Home</a>
+        <NavLink className="rounded-lg ml-2" to="/">Home</NavLink>
       </li>
       <li>
-        <a>Blogs</a>
+        <NavLink className="rounded-lg ml-2" to="/blog">Blogs</NavLink>
       </li>
       <li>
-        <a>Portfolio</a>
+        <NavLink className="rounded-lg ml-2" to="/portfolio">Portfolio</NavLink>
       </li>
       <li>
-        <a>Dashboard</a>
+        <NavLink className="rounded-lg ml-2" to="/dashboard">Dashboard</NavLink>
+      </li>
+      <li>
+        <NavLink className="btn btn-primary rounded-lg ml-2" to="/login">Login</NavLink>
       </li>
     </>
   );
@@ -23,7 +27,7 @@ const Header = ({children}) => {
       <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
       <div class="drawer-content flex flex-col">
         {/* <!-- Navbar --> */}
-        <div class="w-full navbar bg-primary  ">
+        <div class="w-full navbar bg-base-300  ">
           <div className="md:w-11/12 lg:w-11/12 w-full mx-auto">
             <div class="flex-none lg:hidden"></div>
             <div class="flex-1 px-2 mx-2 ">Falcon-Electronics</div>

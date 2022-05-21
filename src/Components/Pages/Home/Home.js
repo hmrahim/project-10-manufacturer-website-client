@@ -4,6 +4,7 @@ import AllProducts from './AllProducts';
 import Banner from './Banner';
 import ClientMessage from './ClientMessage';
 import FetureProduct from './FetureProduct';
+import Map from './Map';
 import Summary from './Summary';
 
 const Home = () => {
@@ -14,6 +15,7 @@ const Home = () => {
             <AllProducts/>
             <Summary/>
             <ClientMessage/>
+            <Map/>
 
             <Footer/>
             
