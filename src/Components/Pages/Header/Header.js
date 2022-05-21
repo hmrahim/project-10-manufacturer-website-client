@@ -1,7 +1,18 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
-
+import { NavLink, useNavigate } from "react-router-dom";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../../firebase.init"
+import { signOut } from "firebase/auth";
 const Header = ({children}) => {
+  const [user,loading,error] = useAuthState(auth)
+  const navigate = useNavigate()
+
+  const logout = ()=> {
+    signOut(auth)
+    navigate("/login")
+
+
+  }
   const menu = (
     <>
       <li>
@@ -16,11 +27,20 @@ const Header = ({children}) => {
       <li>
         <NavLink className="rounded-lg ml-2" to="/dashboard">Dashboard</NavLink>
       </li>
-      <li>
-        <NavLink className="btn btn-primary rounded-lg ml-2" to="/login">Login</NavLink>
+      {
+        user ? 
+        <li>
+        <button onClick={logout} className="btn btn-primary rounded-lg ml-2" >Logout</button>
       </li>
+      :
+      <li>
+      <NavLink className="btn btn-primary rounded-lg ml-2" to="/login">Login</NavLink>
+    </li>
+      }
+     
     </>
   );
+
 
   return (
     <div className="drawer drawer-end ">

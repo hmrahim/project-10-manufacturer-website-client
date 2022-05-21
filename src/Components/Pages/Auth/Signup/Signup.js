@@ -16,10 +16,19 @@ const Signup = () => {
     reset,
   } = useForm();
 
+  if(SignupUser){
+    toast.success("Verificaton email sent please check your email")
+  }
+
+  if(googleUser){
+    toast.success("Logged in successfully")
+  }
+
+
   const onSubmit = (data) => {
     createUserWithEmailAndPassword(data.email,data.password)
     .then(()=>{
-        toast.success("Verificaton email sent please check your email")
+       
         reset()
         
     })
