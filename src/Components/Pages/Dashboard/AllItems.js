@@ -32,7 +32,7 @@ const AllItems = () => {
           <tbody>
             {/* <!-- row 1 --> */}
           {  
-          data.map((product,index)=> <ProductCard key={index} index={index} product={product}  />)
+          data.map((product,index)=> <ProductCard key={index} index={index} product={product}  refetch={refetch} />)
           }
            
             {/* <!-- row 2 --> */}
