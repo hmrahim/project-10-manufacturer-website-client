@@ -12,6 +12,7 @@ import RequireAuth from "./Components/Pages/Auth/Access/RequireAuth";
 import DashboardIndex from "./Components/Pages/Dashboard/DashboardIndex";
 import Users from "./Components/Pages/Dashboard/Users";
 import AdminAuth from "./Components/Pages/Auth/Access/AdminAuth";
+import AddItem from "./Components/Pages/Dashboard/AddItem";
 
 function App() {
   return (
@@ -26,6 +27,15 @@ function App() {
               <Route element={<AdminAuth />}>
                 <Route path="users" element={<Users />} />
               </Route>
+
+              <Route path="additems" element={<AddItem/>}></Route>
+              <Route></Route>
+              <Route></Route>
+              <Route></Route>
+              <Route></Route>
+              <Route></Route>
+              <Route></Route>
+              <Route></Route>
             </Route>
 
             
