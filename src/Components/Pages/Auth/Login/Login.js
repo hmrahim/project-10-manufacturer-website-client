@@ -1,9 +1,12 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useSignInWithEmailAndPassword ,useSignInWithGoogle} from 'react-firebase-hooks/auth';
 import auth from "../../../../firebase.init"
 import { toast } from "react-toastify";
+import useMakeToken from "../../../Hooks/useMakeToken";
+import useMakeUser from "../../../Hooks/useMakeUser";
+import { GoogleAuthProvider } from "firebase/auth";
 
 const Login = () => {
     const [
@@ -19,7 +22,14 @@ const Login = () => {
     handleSubmit,
     reset,
   } = useForm();
+ const [token] = useMakeUser(signinUser || googleUser)
+ const location = useLocation()
+ const from = location?.state?.from?.pathname || "/"
+ const navigate = useNavigate()
+ if(signinUser || googleUser){
+   navigate(from,{replace:true})
 
+ }
 
   const onSubmit = (data) => {
     signInWithEmailAndPassword(data.email,data.password)

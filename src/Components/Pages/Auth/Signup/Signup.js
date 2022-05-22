@@ -1,14 +1,17 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
-import { useCreateUserWithEmailAndPassword,useSignInWithGoogle } from "react-firebase-hooks/auth";
+import { useCreateUserWithEmailAndPassword,useSignInWithGoogle,useUpdateProfile ,useSendEmailVerification} from "react-firebase-hooks/auth";
 import auth from "../../../../firebase.init"
 import { ToastContainer, toast } from 'react-toastify';
+import useMakeUser from "../../../Hooks/useMakeUser";
 
 const Signup = () => {
   const [createUserWithEmailAndPassword, SignupUser, SignupLoading, SignupError] =
     useCreateUserWithEmailAndPassword(auth);
     const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
+    const [updateProfile, updating, error] = useUpdateProfile(auth);
+    const [sendEmailVerification, sending, VerifyError]= useSendEmailVerification(auth)
   const {
     register,
     formState: { errors },
@@ -16,26 +19,30 @@ const Signup = () => {
     reset,
   } = useForm();
 
-  if(SignupUser){
-    toast.success("Verificaton email sent please check your email")
-  }
 
-  if(googleUser){
-    toast.success("Logged in successfully")
-  }
+console.log(SignupUser || googleUser);
+  const [token] = useMakeUser(SignupUser || googleUser)
 
 
   const onSubmit = (data) => {
     createUserWithEmailAndPassword(data.email,data.password)
-    .then(()=>{
-       
-        reset()
-        
+    .then(()=> {
+     updateProfile({displayName:data.name})
+     .then(async()=> {
+       await sendEmailVerification()
+       toast.success("Verification email sent please veriy your account")
+       reset()
+     })
+
     })
+
   };
 
   const googleSignup = ()=> {
     signInWithGoogle()
+    .then(()=> {
+      toast.success("Login succesfully!")
+    })
     
   }
   return (
