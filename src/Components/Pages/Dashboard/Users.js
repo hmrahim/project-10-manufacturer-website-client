@@ -1,6 +1,25 @@
 import React from "react";
+import { useQuery } from "react-query";
+import getToken from "../../Hooks/getToken";
+import postToken from "../../Hooks/postToken";
+import UserRow from "./UserRow";
+import useAdmin from "../../Hooks/useAdmin";
+
+
 
 const Users = () => {
+    
+    
+    const {data,isError,isLoading,refetch} = useQuery("available",
+    ()=> fetch("http://localhost:5000/users",getToken)
+    .then(res=>res.json()))
+    if(isLoading){
+        return <div className='flex justify-center items-center mt-10'>
+       <button className='btn loading'>loading...</button>
+   </div>
+   } 
+ 
+   
   return (
     <div>
       <div class="overflow-x-auto w-full">
@@ -8,20 +27,19 @@ const Users = () => {
           {/* <!-- head --> */}
           <thead>
             <tr>
-              <th></th>
-              <th>Name</th>
-              <th>Job</th>
-              <th>Favorite Color</th>
+              <th className='text-center'>Seriul</th>
+              <th className='text-center'>Name</th>
+              <th className='text-center'>Email</th>
+              <th className='text-center'>Role</th>
+              <th className='text-center'>Action</th>
             </tr>
           </thead>
           <tbody>
             {/* <!-- row 1 --> */}
-            <tr>
-              <th>1</th>
-              <td>Cy Ganderton</td>
-              <td>Quality Control Specialist</td>
-              <td>Blue</td>
-            </tr>
+            {
+                data.map((user,index)=>  <UserRow refetch={refetch} index ={index} key={index} user={user} />)
+            }
+         
          
           </tbody>
         </table>
