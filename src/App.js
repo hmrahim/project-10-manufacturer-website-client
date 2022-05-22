@@ -13,6 +13,8 @@ import DashboardIndex from "./Components/Pages/Dashboard/DashboardIndex";
 import Users from "./Components/Pages/Dashboard/Users";
 import AdminAuth from "./Components/Pages/Auth/Access/AdminAuth";
 import AddItem from "./Components/Pages/Dashboard/AddItem";
+import AllItems from "./Components/Pages/Dashboard/AllItems";
+
 
 function App() {
   return (
@@ -29,7 +31,7 @@ function App() {
               </Route>
 
               <Route path="additems" element={<AddItem/>}></Route>
-              <Route></Route>
+              <Route path="allproducts" element={<AllItems/>}></Route>
               <Route></Route>
               <Route></Route>
               <Route></Route>

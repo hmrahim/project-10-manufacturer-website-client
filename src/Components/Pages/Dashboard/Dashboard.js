@@ -21,6 +21,7 @@ const Dashboard = () => {
         admin.role === "admin"  &&<>
          <li><NavLink className="mt-2" to="/dashboard/users" >Users</NavLink></li>
          <li><NavLink className="mt-2" to="/dashboard/additems" >Add Items</NavLink></li>
+         <li><NavLink className="mt-2" to="/dashboard/allproducts" >All Items</NavLink></li>
         </>
       }
           
