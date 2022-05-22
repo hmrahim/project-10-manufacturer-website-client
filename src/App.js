@@ -14,6 +14,7 @@ import Users from "./Components/Pages/Dashboard/Users";
 import AdminAuth from "./Components/Pages/Auth/Access/AdminAuth";
 import AddItem from "./Components/Pages/Dashboard/AddItem";
 import AllItems from "./Components/Pages/Dashboard/AllItems";
+import UpdateProduct from "./Components/Pages/Dashboard/UpdateProduct";
 
 
 function App() {
@@ -32,12 +33,8 @@ function App() {
 
               <Route path="additems" element={<AddItem/>}></Route>
               <Route path="allproducts" element={<AllItems/>}></Route>
-              <Route></Route>
-              <Route></Route>
-              <Route></Route>
-              <Route></Route>
-              <Route></Route>
-              <Route></Route>
+              <Route path="updateproduct/:id" element={<UpdateProduct/>}></Route>
+           
             </Route>
 
             

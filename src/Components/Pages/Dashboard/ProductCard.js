@@ -1,7 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const ProductCard = ({ product, index }) => {
-  const { title, price, image, quantity, minquantity, desc ,categorie} = product;
+  const {_id, title, price, image, quantity, minquantity, desc ,categorie} = product;
   return (
     <tr>
       <th className="text-center">{index + 1}</th>
@@ -9,7 +10,7 @@ const ProductCard = ({ product, index }) => {
       <td className="text-center">{price}</td>
       <td className="text-center">{quantity}</td>
       <td className="text-center">{categorie}</td>
-      <td className="text-center">{desc.slice(0,100)}</td>
+      <td className="text-center">{desc.slice(0,20)}</td>
       <td className="text-center">
         <div class="avatar">
           <div class="w-16 rounded">
@@ -21,7 +22,7 @@ const ProductCard = ({ product, index }) => {
         </div>
       </td>
       <td className="text-center">
-      <button class="btn btn-sm btn-success">Edit</button>
+      <Link to={`/dashboard/updateproduct/${_id}`} class="btn btn-sm btn-success">Edit</Link>
       <button class="btn btn-sm btn-error ml-2">Delete</button>
       </td>
      
