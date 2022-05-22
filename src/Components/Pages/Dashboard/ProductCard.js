@@ -1,20 +1,38 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
 
 const ProductCard = ({ product, index, refetch }) => {
   const { _id, title, price, image, quantity, minquantity, desc, categorie } =
     product;
 
   const deleteProduct = (id) => {
-    fetch(`http://localhost:5000/product/${_id}`,{
-      method:"DELETE",
-      headers:{
-        "content-type":"application/json",
-        authorization:`bearer ${localStorage.getItem("token")}`
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire("Deleted!", "Your file has been deleted.", "success");
+        fetch(`http://localhost:5000/product/${_id}`, {
+          method: "DELETE",
+          headers: {
+            "content-type": "application/json",
+            authorization: `bearer ${localStorage.getItem("token")}`,
+          },
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            toast.success("Product deleted succesfully");
+          });
       }
-    })
-    .then(res=>res.json())
-    .then(data=>console.log(data))
+    });
   };
   refetch();
   return (

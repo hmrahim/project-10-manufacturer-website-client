@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useQuery } from "react-query";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import Loading from "../Dashboard/Loading";
 
 const UpdateProduct = () => {
   const { id } = useParams();
+  const navigate = useNavigate()
 
   const [title, setTitle] = useState("");
   const [price, setPrice] = useState("");
@@ -51,6 +52,7 @@ const UpdateProduct = () => {
       .then((data) => {
         console.log(data);
         toast.success("Product uploaded succesfully!");
+        navigate("/dashboard/allproducts")
       });
   };
 
@@ -139,7 +141,7 @@ const UpdateProduct = () => {
               </label>
               <input
                 name="image"
-                onChange={(e) => setDesc(e.target.value)}
+                onChange={(e) => setImage(e.target.value)}
                 value={image}
                 type="text"
                 class="input input-bordered w-full max-w-xs"

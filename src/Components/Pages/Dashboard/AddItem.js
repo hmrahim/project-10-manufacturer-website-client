@@ -39,6 +39,7 @@ const AddItem = () => {
           .then(data=> {
             console.log(data)
             toast.success("Product uploaded succesfully!")
+            reset()
           })
           //console.log(product);
 
@@ -64,7 +65,7 @@ const AddItem = () => {
                 type="text"
                 placeholder="Type here"
                 class="input input-bordered w-full max-w-xs"
-                value="ffdsfdfdif"
+                
                 {...register("title",{
                     required:{
                         value:true,
