@@ -1,6 +1,14 @@
 import React from "react";
+import { useQuery } from "react-query";
+import Loading from "./Loading";
+import ProductCard from "./ProductCard";
+
 
 const AllItems = () => {
+  const {data,isLoading,refetch,error} = useQuery("available",()=> fetch("http://localhost:5000/product").then(res=>res.json()))
+  if(isLoading){
+    return <Loading/>
+  }
   return (
     <div className="mt-5 bg-base-300 rounded-lg w-full mx-auto">
       <h1 className="text-center capitalize text-4xl font-semibold py-4">
@@ -11,34 +19,24 @@ const AllItems = () => {
           {/* <!-- head --> */}
           <thead>
             <tr>
-              <th></th>
-              <th>Name</th>
-              <th>Job</th>
-              <th>Favorite Color</th>
+              <th className="text-center">No</th>
+              <th className="text-center">Name</th>
+              <th className="text-center">Price</th>
+              <th className="text-center">Available Quantity</th>
+              <th className="text-center">Categorie</th>
+              <th className="text-center">Description</th>
+              <th className="text-center">image</th>
+              <th className="text-center">Action</th>
             </tr>
           </thead>
           <tbody>
             {/* <!-- row 1 --> */}
-            <tr>
-              <th>1</th>
-              <td>Cy Ganderton</td>
-              <td>Quality Control Specialist</td>
-              <td>Blue</td>
-            </tr>
+          {  
+          data.map((product,index)=> <ProductCard key={index} index={index} product={product}  />)
+          }
+           
             {/* <!-- row 2 --> */}
-            <tr class="hover">
-              <th>2</th>
-              <td>Hart Hagerty</td>
-              <td>Desktop Support Technician</td>
-              <td>Purple</td>
-            </tr>
-            {/* <!-- row 3 --> */}
-            <tr>
-              <th>3</th>
-              <td>Brice Swyre</td>
-              <td>Tax Accountant</td>
-              <td>Red</td>
-            </tr>
+            
           </tbody>
         </table>
       </div>

@@ -2,7 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 
-const AddItem = () => {
+const UpdateProduct = () => {
     const {register,formState:{errors},handleSubmit,reset} = useForm()
     const onsubmit = (data)=> {
         const formData = new FormData()
@@ -204,4 +204,4 @@ const AddItem = () => {
   );
 };
 
-export default AddItem;
+export default UpdateProduct;
