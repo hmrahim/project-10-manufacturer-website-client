@@ -8,6 +8,13 @@ const AddItem = () => {
         const api = '962ac62a2f606aa060a906af6b63da38'
         const url = `https://api.imgbb.com/1/upload?key=${api}`
         const image = data.image[0]
+        const title = data.title
+        const price = data.price
+        const quantity = data.quantity
+        const minquantity = data.minquantity
+        const categorie = data.categorie
+        const desc = data.desc
+        
         formData.append("image",image)
         fetch(url,{
           method:"POST",
@@ -15,7 +22,23 @@ const AddItem = () => {
         })
         .then(res=> res.json())
         .then(data=> {
-          
+          const image = data.data.url
+          const product = {
+            title,price,quantity,minquantity,categorie,desc,image
+          }
+
+          fetch("http://localhost:5000/product",{
+            method:"POST",
+            headers:{
+              "content-type":"application/json"
+            },
+            body:JSON.stringify(product)
+          })
+          .then(res=>res.json())
+          .then(data=> console.log(data))
+          //console.log(product);
+
+
         })
 
 
