@@ -3,6 +3,7 @@ import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../../firebase.init";
 import { signOut } from "firebase/auth";
+import Footer from "../Footer/Footer";
 const Header = ({ children }) => {
   const [user, loading, error] = useAuthState(auth);
   const navigate = useNavigate();
@@ -111,6 +112,7 @@ const Header = ({ children }) => {
         </div>
         {/* <!-- Page content here --> */}
         {children}
+        
       </div>
       <div className="drawer-side">
         <label for="my-drawer-3" className="drawer-overlay"></label>

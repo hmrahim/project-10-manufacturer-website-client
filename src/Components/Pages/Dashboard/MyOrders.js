@@ -10,7 +10,7 @@ import MyOrdersCard from "./MyOrdersCard";
 const MyOrders = () => {
   const [user] = useAuthState(auth);
   const email = user?.email;
-  const { data, isLoading, refetch } = useQuery("available", () =>
+  const { data, isLoading, refetch } = useQuery(["available",email], () =>
     fetch(`http://localhost:5000/order/${email}`, getToken).then((res) =>
       res.json()
     )

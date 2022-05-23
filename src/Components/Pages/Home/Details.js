@@ -9,7 +9,7 @@ import { toast } from "react-toastify";
 
 const Details = () => {
   const { id } = useParams();
-  const { data, isLoading, refetch } = useQuery("available", () =>
+  const { data, isLoading, refetch } = useQuery(["available",id], () =>
     fetch(`http://localhost:5000/productdetails/${id}`).then((res) =>
       res.json()
     )

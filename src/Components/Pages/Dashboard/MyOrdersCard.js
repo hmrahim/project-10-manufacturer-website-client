@@ -2,6 +2,17 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const MyOrdersCard = ({ product, refetch, index }) => {
+  const cancelOrder = (id)=> {
+    fetch(`http://localhost:5000/order/${id}`,{
+      method:"DELETE",
+      headers:{
+        "content-type":"application/json"
+      }
+    })
+    .then(res=>res.json())
+    .then(data=>console.log(data))
+
+  }
     refetch()
   return (
     <tr class="hover">
@@ -25,7 +36,13 @@ const MyOrdersCard = ({ product, refetch, index }) => {
       <td> 
         
         {
-          product.paid ? <button className="btn btn-xs capitalize" >{product.status == 0 ? "Pending" : "Shift"}</button> : <Link to={`/dashboard/payment/${product._id}`} class="btn btn-xs capitalize">pay</Link>
+          product.paid ? <button className="btn btn-xs capitalize" >{product.status == 0 ? "Pending" : "Shift"}</button> 
+          : 
+          <>
+          <Link to={`/dashboard/payment/${product._id}`} class="btn btn-xs capitalize">pay</Link>
+          <button onClick={()=> cancelOrder(product._id)} className="btn btn-xs btn-error capitalize ml-3" >Cancel order</button> 
+          </>
+          
         }
         </td>
     </tr>
