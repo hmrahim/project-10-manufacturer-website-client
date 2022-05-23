@@ -15,6 +15,7 @@ import AdminAuth from "./Components/Pages/Auth/Access/AdminAuth";
 import AddItem from "./Components/Pages/Dashboard/AddItem";
 import AllItems from "./Components/Pages/Dashboard/AllItems";
 import UpdateProduct from "./Components/Pages/Dashboard/UpdateProduct";
+import Details from "./Components/Pages/Home/Details";
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
       <Header>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/details/:id" element={<Details/>} />
           <Route element={<RequireAuth />}>
            
             <Route path="/dashboard" element={<Dashboard />}>

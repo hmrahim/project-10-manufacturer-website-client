@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const FerureProductCard = ({product}) => {
     return (
@@ -6,12 +7,13 @@ const FerureProductCard = ({product}) => {
      
         <div className="card-body z-10">
           <h2 className="card-title">{product.title}</h2>
-          <p>{product.disc}</p>
+          <p>Price: ${product.price}</p>
+          <p>20% off</p>
           <div className="card-actions ">
-            <button className="btn btn-primary">Order Now</button>
+            <Link to={`/details/${product._id}`} className="btn btn-primary">Order Now</Link>
           </div>
         </div>
-        <figure className='w-52'><img src={product.img} className="rounded-xl p-1 " alt="Movie"/></figure>
+        <figure className='w-52'><img src={product.image} className="rounded-xl p-1 " alt="Movie"/></figure>
       </div>
     );
 };

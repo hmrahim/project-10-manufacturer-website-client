@@ -42,7 +42,7 @@ const ProductCard = ({ product, index, refetch }) => {
       <td className="text-center">{price}</td>
       <td className="text-center">{quantity}</td>
       <td className="text-center">{categorie}</td>
-      <td className="text-center">{desc.slice(0, 20)}</td>
+      <td className="text-center">{desc?.slice(0, 20)}</td>
       <td className="text-center">
         <div class="avatar">
           <div class="w-16 rounded">

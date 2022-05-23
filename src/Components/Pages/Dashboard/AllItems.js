@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useQuery } from "react-query";
+import getToken from "../../Hooks/getToken";
 import Loading from "./Loading";
 import ProductCard from "./ProductCard";
 
-
 const AllItems = () => {
-  const {data,isLoading,refetch,error} = useQuery("available",()=> fetch("http://localhost:5000/product").then(res=>res.json()))
-  if(isLoading){
-    return <Loading/>
+  const { data, isLoading, refetch, error } = useQuery("available", () =>
+    fetch("http://localhost:5000/product").then((res) => res.json())
+  );
+  if (isLoading) {
+    return <Loading />;
   }
   return (
     <div className="mt-5 bg-base-300 rounded-lg w-full mx-auto">
@@ -31,12 +33,16 @@ const AllItems = () => {
           </thead>
           <tbody>
             {/* <!-- row 1 --> */}
-          {  
-          data.map((product,index)=> <ProductCard key={index} index={index} product={product}  refetch={refetch} />)
-          }
-           
+            {data.map((product, index) => (
+              <ProductCard
+                key={index}
+                index={index}
+                product={product}
+                refetch={refetch}
+              />
+            ))}
+
             {/* <!-- row 2 --> */}
-            
           </tbody>
         </table>
       </div>
