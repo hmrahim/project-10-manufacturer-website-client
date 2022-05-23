@@ -16,6 +16,7 @@ import AddItem from "./Components/Pages/Dashboard/AddItem";
 import AllItems from "./Components/Pages/Dashboard/AllItems";
 import UpdateProduct from "./Components/Pages/Dashboard/UpdateProduct";
 import Details from "./Components/Pages/Home/Details";
+import ManageOrders from "./Components/Pages/Dashboard/ManageOrders";
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
               <Route index element={<DashboardIndex />} />
               <Route element={<AdminAuth />}>
                 <Route path="users" element={<Users />} />
+                <Route path="manageorder" element={<ManageOrders/>} />
               </Route>
 
               <Route path="additems" element={<AddItem/>}></Route>

@@ -19,9 +19,10 @@ const Dashboard = () => {
       {/* <!-- Sidebar content here --> */}
       {
         admin.role === "admin"  &&<>
-         <li><NavLink className="mt-2" to="/dashboard/users" >Users</NavLink></li>
+         <li><NavLink className="mt-2" to="/dashboard/users" >Manage Users</NavLink></li>
          <li><NavLink className="mt-2" to="/dashboard/additems" >Add Items</NavLink></li>
-         <li><NavLink className="mt-2" to="/dashboard/allproducts" >All Items</NavLink></li>
+         <li><NavLink className="mt-2" to="/dashboard/allproducts" >Manage Items</NavLink></li>
+         <li><NavLink className="mt-2" to="/dashboard/manageorder" >Manage Orders</NavLink></li>
         </>
       }
           
