@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useQuery } from "react-query";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Loading from "../Dashboard/Loading";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../../firebase.init";
@@ -34,6 +34,7 @@ const Details = () => {
 
   //   }
 const {register,formState:{errors},handleSubmit,reset} = useForm()
+const navigate = useNavigate()
 
 let nameError;
 let emailError;
@@ -84,6 +85,7 @@ let quantityError;
         .then((data) => {
           toast.success("Your order is pending please complete the payment")
           console.log(data);
+          navigate("/completeorder")
         });
 
     }
@@ -183,9 +185,7 @@ let quantityError;
                   placeholder="Your name"
                   class="input input-bordered w-full "
                 />
-                <label class="label">
-                  <span class="label-text-alt text-red-500" >{nameError}</span>
-                </label>
+               
               </div>
               <div class="form-control w-full ">
                 <label class="label">
@@ -199,9 +199,7 @@ let quantityError;
                   placeholder="Your Email"
                   class="input input-bordered w-full "
                 />
-                <label class="label">
-                  <span class="label-text-alt">Alt label</span>
-                </label>
+             
               </div>
               <div class="form-control w-full ">
                 <label class="label">
@@ -213,18 +211,14 @@ let quantityError;
                   placeholder="Your Phone"
                   class="input input-bordered w-full m"
                 />
-                <label class="label">
-                  <span class="label-text-alt">Alt label</span>
-                </label>
+              
               </div>
               <div class="form-control w-full ">
                 <label class="label">
                   <span class="label-text">Your Address</span>
                 </label>
                 <textarea  name="address" class="textarea" placeholder="Address..."></textarea>
-                <label class="label">
-                  <span class="label-text-alt">Alt label</span>
-                </label>
+              
               </div>
             </div>
 

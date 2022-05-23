@@ -18,13 +18,14 @@ const Dashboard = () => {
     <ul class="menu p-4 overflow-y-auto w-60 bg-base-300 text-base-content">
       {/* <!-- Sidebar content here --> */}
       {
-        admin.role === "admin"  &&<>
+        admin?.role === "admin"  &&<>
          <li><NavLink className="mt-2" to="/dashboard/users" >Manage Users</NavLink></li>
          <li><NavLink className="mt-2" to="/dashboard/additems" >Add Items</NavLink></li>
          <li><NavLink className="mt-2" to="/dashboard/allproducts" >Manage Items</NavLink></li>
          <li><NavLink className="mt-2" to="/dashboard/manageorder" >Manage Orders</NavLink></li>
         </>
       }
+       <li><NavLink className="mt-2" to="/dashboard/myorders" >My Orders</NavLink></li>
           
       
       
