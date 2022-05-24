@@ -27,6 +27,10 @@ import AllReviews from "./Components/Pages/Dashboard/AllReviews";
 import ForgotPass from "./Components/Pages/Auth/Login/ForgotPass";
 import Messages from "./Components/Pages/Dashboard/Messages";
 import MessageModal from "./Components/Pages/Dashboard/MessageModal";
+import Blog from "./Components/Pages/Blog/Blog";
+import AllBlogs from "./Components/Pages/Dashboard/AllBlogs";
+import AddBlog from "./Components/Pages/Dashboard/AddBlog";
+import NotFound from "./Components/Pages/NotFound/NotFound";
 
 function App() {
   return (
@@ -56,6 +60,8 @@ function App() {
               <Route path="allproducts" element={<AllItems />}></Route>
               <Route path="messages" element={<Messages />}></Route>
               <Route path="viewmessage/:id" element={<MessageModal />}></Route>
+              <Route path="allblogs" element={<AllBlogs />}></Route>
+              <Route path="addblog" element={<AddBlog />}></Route>
               <Route
                 path="updateproduct/:id"
                 element={<UpdateProduct />}
@@ -65,6 +71,8 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/forgotpass" element={<ForgotPass />} />
+          <Route path="/blogs" element={<Blog/>} />
+          <Route path="*" element={<NotFound/>} />
         </Routes>
       </Header>
       <ToastContainer />

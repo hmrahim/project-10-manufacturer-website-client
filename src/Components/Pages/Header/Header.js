@@ -21,7 +21,7 @@ const Header = ({ children }) => {
         </NavLink>
       </li>
       <li>
-        <NavLink className="rounded-lg ml-2" to="/blog">
+        <NavLink className="rounded-lg ml-2" to="/blogs">
           Blogs
         </NavLink>
       </li>

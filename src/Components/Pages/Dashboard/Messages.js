@@ -17,8 +17,11 @@ const Messages = () => {
     return <Loading />;
   }
   return (
-    <div>
+    <div className="mt-5 bg-base-300 rounded-lg w-full mx-auto">
+        <h1 className="text-4xl text-center capitalize my-3 p-2">Customer Messages</h1>
+        
       <div className="overflow-x-auto w-full">
+          
         <table className="table w-full">
           {/* <!-- head --> */}
           <thead>

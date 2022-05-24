@@ -51,6 +51,11 @@ const Dashboard = () => {
                   Messages
                 </NavLink>
               </li>
+              <li>
+                <NavLink className="mt-2" to="/dashboard/allblogs">
+                  Blogs
+                </NavLink>
+              </li>
             </>
           )}
 {

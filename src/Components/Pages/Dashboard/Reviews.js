@@ -38,7 +38,7 @@ const Reviews = () => {
   };
   return (
     <div className="md:w-3/5 w-full bg-base-300 mx-auto p-3 rounded-lg">
-      <h1 className="text-4xl text-center capitalize my-3">Send a Review</h1>{" "}
+      <h1 className="text-4xl text-center capitalize my-3">Send a Review</h1>
       <hr />
       <form onSubmit={handleSubmit(onsubmit)} action="">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -50,7 +50,7 @@ const Reviews = () => {
               type="text"
               placeholder="Type here"
               class="input input-bordered w-full "
-              {...register("name", {
+              {...register("title", {
                 required: {
                   value: true,
                   message: "Name is required",

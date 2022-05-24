@@ -16,10 +16,15 @@ const FetureProduct = () => {
  },[])
 
     return (
-     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 w-11/12 mx-auto my-5'>
+     <div className=' '>
+         <h1 className='text-center text-4xl font-semibold my-3 uppercase'>Letest product</h1>
+         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 w-11/12 mx-auto my-5'>
          {
              data.map((product,index)=> <FerureProductCard key={index} product={product} />)
          }
+
+         </div>
+        
          
          
 

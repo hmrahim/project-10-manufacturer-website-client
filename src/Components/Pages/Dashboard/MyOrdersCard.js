@@ -59,7 +59,7 @@ const MyOrdersCard = ({ product, refetch, index }) => {
       <td> 
         
         {
-          product.paid ? <button className="btn btn-xs capitalize" >{product.status == 0 ? "Pending" : "Shift"}</button> 
+          product.paid ? <button className="btn btn-xs capitalize" >{product.status == 0 ? "Pending" : "Shipped"}</button> 
           : 
           <>
           <Link to={`/dashboard/payment/${product._id}`} className="btn btn-xs capitalize">pay</Link>

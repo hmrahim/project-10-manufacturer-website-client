@@ -58,7 +58,7 @@ console.log(SignupUser || googleUser);
               type="text"
               placeholder="Type here"
               className="input input-bordered w-full "
-              {...register("name", {
+              {...register("title", {
                 required: {
                   value: true,
                   message: "Name is required",
