@@ -16,17 +16,17 @@ const Profile = () => {
     return (
         <div className='md:w-3/5 w-full bg-base-300 mx-auto p-3 rounded-lg'>
             <h1 className='text-4xl text-center capitalize'>Profile</h1> <hr />
-            <div className='mt-5'>
-                <h3 className='text-2xl md:ml-5 my-3'>{user?.displayName}</h3>
-                <h3 className='text-[16px] md:ml-5 my-4'><strong>Email: </strong>{user?.email}</h3>
-                <h3 className='text-[16px] md:ml-5 my-4'><strong>Phone: </strong>{data?.phone}</h3>
-                <h3 className='text-[16px] md:ml-5 my-4'><strong>Education: </strong>{data?.education}</h3>
-                <h3 className='text-[16px] md:ml-5 my-4'><strong>Location: </strong>{data?.location}</h3>
-                <h3 className='text-[16px] md:ml-5 my-4'><strong>Facebook: </strong>{data?.facebook}</h3>
-                <h3 className='text-[16px] md:ml-5 my-4'><strong>Linkdin: </strong>{data?.linkdin}</h3>
-                <h3 className='text-[16px] md:ml-5 my-4'><strong>Instagram: </strong>{data?.instagram}</h3>
+            <div className='mt-5 flex flex-col justify-center items-center'>
+                <h3 className='text-3xl md:ml-5 my-3 uppercase '>{user?.displayName}</h3>
+                <h3 className='text-[16px] md:ml-5 my-4 capitalize'><strong>Email: </strong>{user?.email}</h3>
+                <h3 className='text-[16px] md:ml-5 my-4 capitalize'><strong>Phone: </strong>{data?.phone ? data.phone : "Set phone"}</h3>
+                <h3 className='text-[16px] md:ml-5 my-4 capitalize'><strong>Education: </strong>{data?.education ? data.education : "Update education"}</h3>
+                <h3 className='text-[16px] md:ml-5 my-4 capitalize'><strong>Location: </strong>{data?.location ? data.location : "Set location"}</h3>
+                <h3 className='text-[16px] md:ml-5 my-4 capitalize'><strong>Facebook: </strong>{data?.facebook ? data.facebook : "Set facebook profile"}</h3>
+                <h3 className='text-[16px] md:ml-5 my-4 capitalize'><strong>Linkdin: </strong>{data?.linkdin ? data.linkdin : "Set linkdin profile"}</h3>
+                <h3 className='text-[16px] md:ml-5 my-4 capitalize'><strong>Instagram: </strong>{data?.instagram ? data.instagram : "Set instagram profile"}</h3>
             </div>
-            <Link to={`/dashboard/updateprofile/33`} className="btn btn-info mt-10 btn-sm">Update Profile</Link>
+            <Link to={`/dashboard/updateprofile`} className="btn btn-info mt-10 btn-sm">Update Profile</Link>
 
            
         </div>

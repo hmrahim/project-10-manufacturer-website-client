@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useQuery } from "react-query";
+import { useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import atuh from "../../../firebase.init";
 import getToken from "../../Hooks/getToken";
@@ -14,7 +15,7 @@ const UpdateProfile = () => {
 
 
 
-    const [loading,setLoading] = useState(true)
+    const [loading,setLoading] = useState(false)
     const [phone,setPhone] = useState("")
     const [education,setEducation] = useState("")
     const [location,setLocation] = useState("")
@@ -27,6 +28,7 @@ const UpdateProfile = () => {
     const [fberror,setFbError] = useState("")
     const [inserror,setInsError] = useState("")
     const [lnerror,setLnError] = useState("")
+    const rediect = useNavigate()
 
     useEffect(()=> {
         fetch(`http://localhost:5000/getprofile/${email}`,getToken)
@@ -98,6 +100,7 @@ const UpdateProfile = () => {
             .then(data=>{
                 console.log(data);
                 toast.success("Profile updated succesfully")
+               return rediect("/dashboard/profile")
                 
             })
             setLoading(false)
@@ -108,7 +111,7 @@ const UpdateProfile = () => {
   
   return (
     <div className="md:w-3/5 w-full bg-base-300 mx-auto p-3 rounded-lg ">
-      <h1 className="text-4xl text-center capitalize my-3">update Profile</h1>{" "}
+      <h1 className="text-4xl text-center capitalize my-3">update Profile</h1>
       <hr />
       <form onSubmit={submit} action="">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -124,8 +127,7 @@ const UpdateProfile = () => {
               disabled
 
             />
-            <p className="text-red-500">{phoneError}</p> <br />
-            
+          
           </div>
           <div className="flex flex-col">
             <label htmlFor="">Name</label>
@@ -139,8 +141,7 @@ const UpdateProfile = () => {
               disabled
 
             />
-            <p className="text-red-500">{phoneError}</p> <br />
-            
+          
           </div>
           <div className="flex flex-col">
             <label htmlFor="">Phone</label>
