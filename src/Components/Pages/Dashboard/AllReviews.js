@@ -1,10 +1,19 @@
 import React from 'react';
-
+import { useQuery } from 'react-query';
+import getToken from "../../Hooks/getToken"
+import Loading from "./Loading"
+import ReviewCard from './ReviewCard';
 const AllReviews = () => {
-    return (
+  const {data,isLoading,refetch} = useQuery("review",()=> fetch("http://localhost:5000/reviews",getToken).then(res=>res.json()))
+  
+
+  if(isLoading){
+    return <Loading/>
+  }
+  return (
         <div className="mt-5 bg-base-300 rounded-lg w-full mx-auto">
       <h1 className="text-center capitalize text-4xl font-semibold py-4">
-        All items
+        All Reviews
       </h1>
       <div class="overflow-x-auto p-3">
         <table class="table w-full">
@@ -21,7 +30,9 @@ const AllReviews = () => {
           </thead>
           <tbody>
             {/* <!-- row 1 --> */}
-         
+         {
+           data.map((review,index)=> <ReviewCard key={index} index={index} review={review} refetch={refetch} />)
+         }
 
             {/* <!-- row 2 --> */}
           </tbody>
