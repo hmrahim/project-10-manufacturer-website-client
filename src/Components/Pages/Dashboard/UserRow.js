@@ -51,9 +51,7 @@ const UserRow = ({ user, index,refetch }) => {
       </div>
       </td>
       <td className="text-center">
-        <Link to="" className="btn btn-xs btn-success btn-outline">
-          Update
-        </Link>
+       
         <button className="btn btn-xs btn-error ml-2 btn-outline">
           Delete
         </button>

@@ -180,7 +180,7 @@ const UpdateProfile = () => {
               type="text"
               placeholder="Type here"
               class="input input-bordered w-full "
-              value={education}
+              value={location}
             />
              <p className="text-red-500">{locserror}</p> <br />
           </div>

@@ -48,6 +48,10 @@ const Dashboard = () => {
               </li>
             </>
           )}
+{
+  admin?.role !== "admin" &&
+
+          <>
           <li>
             <NavLink className="mt-2" to="/dashboard/myorders">
               My Orders
@@ -58,6 +62,10 @@ const Dashboard = () => {
              Add a review
             </NavLink>
           </li>
+          </>
+          }
+
+
           <li>
             <NavLink className="mt-2" to="/dashboard/profile">
              My Profile

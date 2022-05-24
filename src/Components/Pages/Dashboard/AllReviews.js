@@ -24,6 +24,7 @@ const AllReviews = () => {
               <th className="text-center">Name</th>
               <th className="text-center">Email</th>
               <th className="text-center">Phone</th>
+              <th className="text-center">Rating</th>
               <th className="text-center">Review</th>
               <th className="text-center">Action</th>
             </tr>

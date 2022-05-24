@@ -31,7 +31,7 @@ const Header = ({ children }) => {
         </NavLink>
       </li>
       <li>
-        <NavLink className="rounded-lg ml-2" to="/dashboard">
+        <NavLink className="rounded-lg ml-2 mb-3 md:mb-0" to="/dashboard">
           Dashboard
         </NavLink>
       </li>
@@ -51,6 +51,7 @@ const Header = ({ children }) => {
     </>
   );
   const { pathname } = useLocation();
+  console.log(pathname);
 
   return (
     <div className="drawer drawer-end ">
@@ -61,7 +62,8 @@ const Header = ({ children }) => {
           <div className="md:w-11/12 lg:w-11/12 w-full mx-auto">
             <div className="flex-none lg:hidden"></div>
             {
-              pathname == "/dashboard" &&  <label
+              pathname.includes("dashboard") &&
+               <label
               for="my-drawer-2"
               tabindex="0"
               class="btn btn-ghost btn-circle md:hidden lg:hidden flex"
