@@ -5,9 +5,9 @@ import { toast } from "react-toastify";
 const UserRow = ({ user, index,refetch }) => {
     const updateRole = (e)=> {
         e.preventDefault()
-        const url = `http://localhost:5000/users/${user.email}`
+        const url = `https://protected-peak-92782.herokuapp.com/users/${user.email}`
         const role = e.target.role.value
-        console.log(role);
+        // console.log(role);
         
      fetch(url,{
          method:"PATCH",
@@ -19,7 +19,7 @@ const UserRow = ({ user, index,refetch }) => {
      })
      .then(res=>res.json())
      .then(data=>{
-         console.log(data)
+        //  console.log(data)
          toast.success("User role updated succesfully")
         })
 
@@ -37,7 +37,7 @@ const UserRow = ({ user, index,refetch }) => {
           }
      
         <form onSubmit={updateRole} action="">
-          <select name="role" class="select select-bordered select-xs w-20 max-w-xs">
+          <select name="role" className="select select-bordered select-xs w-20 max-w-xs">
             <option disabled selected>
               Role
             </option>

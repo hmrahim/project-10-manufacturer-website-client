@@ -10,7 +10,7 @@ import getToken from '../../Hooks/getToken';
 const FetureProduct = () => {
  const [data,setData] = useState([])
  useEffect(()=> {
-    fetch("http://localhost:5000/fetureproduct",getToken)
+    fetch("https://protected-peak-92782.herokuapp.com/fetureproduct",getToken)
     .then(res=>res.json())
     .then(data=>setData(data))
  },[])

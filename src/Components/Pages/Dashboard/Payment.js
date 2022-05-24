@@ -14,7 +14,7 @@ const stripePromise = loadStripe(
 
 const Payment = () => {
   const { id } = useParams();
-  const url = `http://localhost:5000/orderpayment/${id}`;
+  const url = `https://protected-peak-92782.herokuapp.com/orderpayment/${id}`;
   const { data, isLoading, refetch } = useQuery(["available",id], () =>
     fetch(url, getIdToken).then((res) => res.json())
   );

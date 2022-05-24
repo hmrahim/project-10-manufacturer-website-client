@@ -24,6 +24,9 @@ import Profile from "./Components/Pages/Dashboard/Profile"
 import Reviews from "./Components/Pages/Dashboard/Reviews"
 import UpdateProfile from "./Components/Pages/Dashboard/UpdateProfile";
 import AllReviews from "./Components/Pages/Dashboard/AllReviews";
+import ForgotPass from "./Components/Pages/Auth/Login/ForgotPass";
+import Messages from "./Components/Pages/Dashboard/Messages";
+import MessageModal from "./Components/Pages/Dashboard/MessageModal";
 
 function App() {
   return (
@@ -51,6 +54,8 @@ function App() {
 
               <Route path="additems" element={<AddItem />}></Route>
               <Route path="allproducts" element={<AllItems />}></Route>
+              <Route path="messages" element={<Messages />}></Route>
+              <Route path="viewmessage/:id" element={<MessageModal />}></Route>
               <Route
                 path="updateproduct/:id"
                 element={<UpdateProduct />}
@@ -59,6 +64,7 @@ function App() {
           </Route>
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/forgotpass" element={<ForgotPass />} />
         </Routes>
       </Header>
       <ToastContainer />

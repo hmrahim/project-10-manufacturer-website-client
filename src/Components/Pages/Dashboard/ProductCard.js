@@ -20,7 +20,7 @@ const ProductCard = ({ product, index, refetch }) => {
     }).then((result) => {
       if (result.isConfirmed) {
         Swal.fire("Deleted!", "Your file has been deleted.", "success");
-        fetch(`http://localhost:5000/product/${_id}`, {
+        fetch(`https://protected-peak-92782.herokuapp.com/product/${_id}`, {
           method: "DELETE",
           headers: {
             "content-type": "application/json",
@@ -44,8 +44,8 @@ const ProductCard = ({ product, index, refetch }) => {
       <td className="text-center">{categorie}</td>
       <td className="text-center">{desc?.slice(0, 20)}</td>
       <td className="text-center">
-        <div class="avatar">
-          <div class="w-16 rounded">
+        <div className="avatar">
+          <div className="w-16 rounded">
             <img src={image} alt="Tailwind-CSS-Avatar-component" />
           </div>
         </div>
@@ -53,13 +53,13 @@ const ProductCard = ({ product, index, refetch }) => {
       <td className="text-center">
         <Link
           to={`/dashboard/updateproduct/${_id}`}
-          class="btn btn-sm btn-success"
+          className="btn btn-sm btn-success"
         >
           Edit
         </Link>
         <button
           onClick={() => deleteProduct(_id)}
-          class="btn btn-sm btn-error ml-2"
+          className="btn btn-sm btn-error ml-2"
         >
           Delete
         </button>

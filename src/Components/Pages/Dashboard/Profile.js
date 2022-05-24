@@ -9,7 +9,7 @@ const Profile = () => {
     const [user] = useAuthState(atuh)
     const email = user.email
     useEffect(()=> {
-        fetch(`http://localhost:5000/getprofile/${email}`,getToken)
+        fetch(`https://protected-peak-92782.herokuapp.com/getprofile/${email}`,getToken)
         .then(res=>res.json())
         .then(data=>setData(data))
     },[])

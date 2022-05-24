@@ -19,8 +19,8 @@ const Reviews = () => {
       review: data.review,
       rating: data.rating,
     };
-    console.log(data);
-    console.log(obj);
+    // console.log(data);
+    // console.log(obj);
 
     fetch("http://localhost:5000/reviews", {
       method: "POST",

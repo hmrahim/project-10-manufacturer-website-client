@@ -4,7 +4,7 @@ import getToken from "../../Hooks/getToken"
 import Loading from "./Loading"
 import ReviewCard from './ReviewCard';
 const AllReviews = () => {
-  const {data,isLoading,refetch} = useQuery("review",()=> fetch("http://localhost:5000/reviews",getToken).then(res=>res.json()))
+  const {data,isLoading,refetch} = useQuery("review",()=> fetch("https://protected-peak-92782.herokuapp.com/reviews",getToken).then(res=>res.json()))
   
 
   if(isLoading){
@@ -15,8 +15,8 @@ const AllReviews = () => {
       <h1 className="text-center capitalize text-4xl font-semibold py-4">
         All Reviews
       </h1>
-      <div class="overflow-x-auto p-3">
-        <table class="table w-full">
+      <div className="overflow-x-auto p-3">
+        <table className="table w-full">
           {/* <!-- head --> */}
           <thead>
             <tr>

@@ -9,15 +9,15 @@ const Dashboard = () => {
   return (
     
    
-    <div class="drawer drawer-mobile">
-      <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
-      <div class="drawer-content  p-3 bg-info">
+    <div className="drawer drawer-mobile">
+      <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
+      <div className="drawer-content  p-3 bg-info">
         {/* <!-- Page content here --> */}
         <Outlet />
       </div>
-      <div class="drawer-side ">
-        <label for="my-drawer-2" class="drawer-overlay"></label>
-        <ul class="menu p-4 overflow-y-auto w-60 bg-base-300 text-base-content">
+      <div className="drawer-side ">
+        <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
+        <ul className="menu p-4 overflow-y-auto w-60 bg-base-300 text-base-content">
           {/* <!-- Sidebar content here --> */}
           {admin?.role === "admin" && (
             <>
@@ -44,6 +44,11 @@ const Dashboard = () => {
               <li>
                 <NavLink className="mt-2" to="/dashboard/allreview">
                   Reviews
+                </NavLink>
+              </li>
+              <li>
+                <NavLink className="mt-2" to="/dashboard/messages">
+                  Messages
                 </NavLink>
               </li>
             </>

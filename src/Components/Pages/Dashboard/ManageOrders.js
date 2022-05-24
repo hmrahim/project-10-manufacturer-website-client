@@ -5,7 +5,7 @@ import Loading from './Loading';
 import ManageOrderCard from './ManageOrderCard';
 
 const ManageOrders = () => {
-    const {data,isLoading,refetch} = useQuery("available",()=> fetch("http://localhost:5000/order",getToken).then(res=>res.json()))
+    const {data,isLoading,refetch} = useQuery("available",()=> fetch("https://protected-peak-92782.herokuapp.com/order",getToken).then(res=>res.json()))
     if(isLoading){
         return <Loading/>
     }
@@ -14,8 +14,8 @@ const ManageOrders = () => {
       <h1 className="text-center capitalize text-4xl font-semibold py-4">
         Manage Orders
       </h1>
-      <div class="overflow-x-auto p-3">
-        <table class="table w-full p-3">
+      <div className="overflow-x-auto p-3">
+        <table className="table w-full p-3">
           {/* <!-- head --> */}
           <thead>
             <tr>

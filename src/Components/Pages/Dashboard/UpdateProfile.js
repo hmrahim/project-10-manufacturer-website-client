@@ -31,7 +31,7 @@ const UpdateProfile = () => {
     const rediect = useNavigate()
 
     useEffect(()=> {
-        fetch(`http://localhost:5000/getprofile/${email}`,getToken)
+        fetch(`https://protected-peak-92782.herokuapp.com/getprofile/${email}`,getToken)
         .then(res=>res.json())
         .then(data=>{
             setPhone(data.phone)
@@ -88,7 +88,7 @@ const UpdateProfile = () => {
             setLoading(true)
 
             const email = user?.email
-            fetch(`http://localhost:5000/updateprofile/${email}`,{
+            fetch(`https://protected-peak-92782.herokuapp.com/updateprofile/${email}`,{
                 method:"PATCH",
                 headers:{
                     "content-type":"application/json",
@@ -122,7 +122,7 @@ const UpdateProfile = () => {
             onChange={(e)=>setPhone(e.target.value)}
               type="text"
               placeholder="Type here"
-              class="input input-bordered w-full "
+              className="input input-bordered w-full "
               value={user?.email}
               disabled
 
@@ -136,7 +136,7 @@ const UpdateProfile = () => {
             onChange={(e)=>setPhone(e.target.value)}
               type="text"
               placeholder="Type here"
-              class="input input-bordered w-full "
+              className="input input-bordered w-full "
               value={user?.displayName}
               disabled
 
@@ -150,7 +150,7 @@ const UpdateProfile = () => {
             onChange={(e)=>setPhone(e.target.value)}
               type="text"
               placeholder="Type here"
-              class="input input-bordered w-full "
+              className="input input-bordered w-full "
               value={phone}
 
             />
@@ -160,7 +160,7 @@ const UpdateProfile = () => {
           <div className="flex flex-col">
             <label htmlFor="">Education</label>
             <textarea 
-            class="textarea textarea-bordered"
+            className="textarea textarea-bordered"
             name="education"
             onChange={(e)=>setEducation(e.target.value)}
               type="text"
@@ -179,7 +179,7 @@ const UpdateProfile = () => {
             onChange={(e)=>setLocation(e.target.value)}
               type="text"
               placeholder="Type here"
-              class="input input-bordered w-full "
+              className="input input-bordered w-full "
               value={location}
             />
              <p className="text-red-500">{locserror}</p> <br />
@@ -191,7 +191,7 @@ const UpdateProfile = () => {
             onChange={(e)=>setFacebook(e.target.value)}
               type="text"
               placeholder="Type here"
-              class="input input-bordered w-full "
+              className="input input-bordered w-full "
               value={facebook}
             />
              <p className="text-red-500">{fberror}</p> <br />
@@ -203,7 +203,7 @@ const UpdateProfile = () => {
             onChange={(e)=>setLinkdin(e.target.value)}
               type="text"
               placeholder="Type here"
-              class="input input-bordered w-full "
+              className="input input-bordered w-full "
               value={linkdin}
             />
              <p className="text-red-500">{inserror}</p> <br />
@@ -215,7 +215,7 @@ const UpdateProfile = () => {
             onChange={(e)=>setInstagram(e.target.value)}
               type="text"
               placeholder="Type here"
-              class="input input-bordered w-full "
+              className="input input-bordered w-full "
               value={instagram}
             />
              <p className="text-red-500">{inserror}</p> <br />

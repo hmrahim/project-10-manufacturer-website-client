@@ -17,7 +17,7 @@ const ReviewCard = ({ review, index, refetch }) => {
       if (result.isConfirmed) {
         Swal.fire("Deleted!", "Your file has been deleted.", "success");
 
-        fetch(`http://localhost:5000/reviews/${id}`, {
+        fetch(`https://protected-peak-92782.herokuapp.com/reviews/${id}`, {
           method: "DELETE",
           headers: {
             "content-type": "application/json",
@@ -39,47 +39,47 @@ const ReviewCard = ({ review, index, refetch }) => {
       <td className="text-center">
   {
       review.rating == "1" &&       
-      <div class="rating rating-sm">
-        <input type="radio" name="rating-6" class="mask mask-star-2 bg-orange-400" checked/>
+      <div className="rating rating-sm">
+        <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" checked/>
     
       </div>
   }
    {
       review.rating == "2" &&       
-      <div class="rating rating-sm">
-       <input type="radio" name="rating-6" class="mask mask-star-2 bg-orange-400" checked/>
-       <input type="radio" name="rating-6" class="mask mask-star-2 bg-orange-400" checked/>
+      <div className="rating rating-sm">
+       <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" checked/>
+       <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" checked/>
       
       </div>
   }
    {
       review.rating == "3" &&       
-      <div class="rating rating-sm">
-       <input type="radio" name="rating-6" class="mask mask-star-2 bg-orange-400" checked/>
-       <input type="radio" name="rating-6" class="mask mask-star-2 bg-orange-400" checked/>
+      <div className="rating rating-sm">
+       <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" checked/>
+       <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" checked/>
       
-       <input type="radio" name="rating-6" class="mask mask-star-2 bg-orange-400" checked/>
+       <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" checked/>
       </div>
   }
    {
       review.rating == "4" &&       
-      <div class="rating rating-sm">
-       <input type="radio" name="rating-6" class="mask mask-star-2 bg-orange-400" checked/>
-       <input type="radio" name="rating-6" class="mask mask-star-2 bg-orange-400" checked/>
-       <input type="radio" name="rating-6" class="mask mask-star-2 bg-orange-400" checked/>
+      <div className="rating rating-sm">
+       <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" checked/>
+       <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" checked/>
+       <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" checked/>
       
-       <input type="radio" name="rating-6" class="mask mask-star-2 bg-orange-400" checked/>
+       <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" checked/>
       </div>
   }
    {
       review.rating == "5" &&       
-      <div class="rating rating-sm">
-       <input type="radio" name="rating-6" class="mask mask-star-2 bg-orange-400" checked/>
-       <input type="radio" name="rating-6" class="mask mask-star-2 bg-orange-400" checked/>
-       <input type="radio" name="rating-6" class="mask mask-star-2 bg-orange-400" checked/>
-       <input type="radio" name="rating-6" class="mask mask-star-2 bg-orange-400" checked/>
+      <div className="rating rating-sm">
+       <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" checked/>
+       <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" checked/>
+       <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" checked/>
+       <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" checked/>
       
-       <input type="radio" name="rating-6" class="mask mask-star-2 bg-orange-400" checked/>
+       <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" checked/>
       </div>
   }
       </td>

@@ -2,7 +2,7 @@ import React from "react";
 
 const ManageOrderCard = ({ product, refetch, index }) => {
   const shiftProduct = (id)=> {
-    fetch(`http://localhost:5000/shiptproduct/${id}`,{
+    fetch(`https://protected-peak-92782.herokuapp.com/shiptproduct/${id}`,{
       method:"PATCH",
       headers:{
         "content-type":"application/json",
@@ -16,7 +16,7 @@ const ManageOrderCard = ({ product, refetch, index }) => {
   }
     refetch()
   return (
-    <tr class="hover">
+    <tr className="hover">
       <th>{index + 1}</th>
       <td>{product.name}</td>
       <td>{product.email}</td>
@@ -25,8 +25,8 @@ const ManageOrderCard = ({ product, refetch, index }) => {
       <td>{product.quantity}</td>
       <td>${product.price}</td>
       <td>
-        <div class="avatar">
-          <div class="w-16 rounded">
+        <div className="avatar">
+          <div className="w-16 rounded">
             <img
               src={product.image}
               alt="Tailwind-CSS-Avatar-component"
@@ -40,14 +40,14 @@ const ManageOrderCard = ({ product, refetch, index }) => {
           <div>
             {
               product.status== 0 ?
-              <button onClick={()=> shiftProduct(product._id)} class="btn btn-xs btn-info capitalize">pending</button>
+              <button onClick={()=> shiftProduct(product._id)} className="btn btn-xs btn-info capitalize">pending</button>
               :
-              <button class="btn btn-xs btn-success capitalize">Shifted</button>
+              <button className="btn btn-xs btn-success capitalize">Shifted</button>
 
             }
           </div> 
            : 
-           <button class="btn btn-xs capitalize">unpaid</button>
+           <button className="btn btn-xs capitalize">unpaid</button>
           
           
           

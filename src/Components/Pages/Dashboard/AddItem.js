@@ -16,7 +16,7 @@ const AddItem = () => {
         const categorie = data.categorie
         const desc = data.desc
         
-        formData.append("image",image)
+        FormData.append("image",image)
         fetch(url,{
           method:"POST",
           body:formData
@@ -28,7 +28,7 @@ const AddItem = () => {
             title,price,quantity,minquantity,categorie,desc,image
           }
 
-          fetch("http://localhost:5000/product",{
+          fetch("https://protected-peak-92782.herokuapp.com/product",{
             method:"POST",
             headers:{
               "content-type":"application/json"
@@ -37,7 +37,7 @@ const AddItem = () => {
           })
           .then(res=>res.json())
           .then(data=> {
-            console.log(data)
+         
             toast.success("Product uploaded succesfully!")
             reset()
           })
@@ -58,13 +58,13 @@ const AddItem = () => {
         <form  onSubmit={handleSubmit(onsubmit)} action="">
           <div className="grid md:grid-cols-2 grid-cols-1">
             <div className="flex flex-col p-3">
-              <label class="label">
-                <span class="label-text">Product title</span>
+              <label className="label">
+                <span className="label-text">Product title</span>
               </label>
               <input
                 type="text"
                 placeholder="Type here"
-                class="input input-bordered w-full max-w-xs"
+                className="input input-bordered w-full max-w-xs"
                 
                 {...register("title",{
                     required:{
@@ -74,19 +74,19 @@ const AddItem = () => {
                 })}
 
               />
-              <label class="label">
-                  {errors?.title?.type === "required" &&  <span class="label-text text-red-500">{errors.title.message}</span>}
+              <label className="label">
+                  {errors?.title?.type === "required" &&  <span className="label-text text-red-500">{errors.title.message}</span>}
                
               </label>
             </div>
             <div className="flex flex-col p-3">
-              <label class="label">
-                <span class="label-text">Product Price</span>
+              <label className="label">
+                <span className="label-text">Product Price</span>
               </label>
               <input
                 type="number"
                 placeholder="Type here"
-                class="input input-bordered w-full max-w-xs"
+                className="input input-bordered w-full max-w-xs"
                 {...register("price",{
                     required:{
                         value:true,
@@ -94,18 +94,18 @@ const AddItem = () => {
                     }
                 })}
               />
-              <label class="label">
-              {errors?.price?.type === "required" &&  <span class="label-text text-red-500">{errors.price.message}</span>}
+              <label className="label">
+              {errors?.price?.type === "required" &&  <span className="label-text text-red-500">{errors.price.message}</span>}
               </label>
             </div>
             <div className="flex flex-col p-3">
-            <label class="label">
-                <span class="label-text">Product Quantity</span>
+            <label className="label">
+                <span className="label-text">Product Quantity</span>
               </label>
               <input
                 type="number"
                 placeholder="Type here"
-                class="input input-bordered w-full max-w-xs"
+                className="input input-bordered w-full max-w-xs"
                 {...register("quantity",{
                     required:{
                         value:true,
@@ -113,18 +113,18 @@ const AddItem = () => {
                     }
                 })}
               />
-              <label class="label">
-              {errors?.quantity?.type === "required" &&  <span class="label-text text-red-500">{errors.quantity.message}</span>}
+              <label className="label">
+              {errors?.quantity?.type === "required" &&  <span className="label-text text-red-500">{errors.quantity.message}</span>}
               </label>
             </div>
             <div className="flex flex-col p-3">
-            <label class="label">
-                <span class="label-text">Minimum Order Quantity</span>
+            <label className="label">
+                <span className="label-text">Minimum Order Quantity</span>
               </label>
               <input
                 type="number"
                 placeholder="Type here"
-                class="input input-bordered w-full max-w-xs"
+                className="input input-bordered w-full max-w-xs"
                 {...register("minquantity",{
                     required:{
                         value:true,
@@ -132,15 +132,15 @@ const AddItem = () => {
                     }
                 })}
               />
-              <label class="label">
-              {errors?.minquantity?.type === "required" &&  <span class="label-text text-red-500">{errors.minquantity.message}</span>}
+              <label className="label">
+              {errors?.minquantity?.type === "required" &&  <span className="label-text text-red-500">{errors.minquantity.message}</span>}
               </label>
             </div>
             <div className="flex flex-col p-3">
-            <label class="label">
-                <span class="label-text">Product Categorie</span>
+            <label className="label">
+                <span className="label-text">Product Categorie</span>
               </label>
-              <select class="select select-bordered w-full max-w-xs"
+              <select className="select select-bordered w-full max-w-xs"
                {...register("categorie",{
                 required:{
                     value:true,
@@ -154,17 +154,17 @@ const AddItem = () => {
                 <option>Han Solo</option>
                 <option>Greedo</option>
               </select>
-              <label class="label">
-              {errors?.categorie?.type === "required" &&  <span class="label-text text-red-500">{errors.categorie.message}</span>}
+              <label className="label">
+              {errors?.categorie?.type === "required" &&  <span className="label-text text-red-500">{errors.categorie.message}</span>}
               </label>
             </div>
             <div className="flex flex-col p-3">
-            <label class="label">
-                <span class="label-text">Product Image</span>
+            <label className="label">
+                <span className="label-text">Product Image</span>
               </label>
               <input 
               type="file" 
-              class="input input-bordered w-full max-w-xs"
+              className="input input-bordered w-full max-w-xs"
               {...register("image",{
                 required:{
                     value:true,
@@ -172,17 +172,17 @@ const AddItem = () => {
                 }
             })}
                />
-              <label class="label">
-              {errors?.image?.type === "required" &&  <span class="label-text text-red-500">{errors.image.message}</span>}
+              <label className="label">
+              {errors?.image?.type === "required" &&  <span className="label-text text-red-500">{errors.image.message}</span>}
               </label>
             </div>
           </div>
           <div className="flex flex-col p-3">
-          <label class="label">
-                <span class="label-text">Product Description</span>
+          <label className="label">
+                <span className="label-text">Product Description</span>
               </label>
             <textarea
-              class="textarea textarea-bordered"
+              className="textarea textarea-bordered"
               placeholder="Bio"
               {...register("desc",{
                 required:{
@@ -192,8 +192,8 @@ const AddItem = () => {
             })}
 
             ></textarea>
-            <label class="label">
-            {errors?.desc?.type === "required" &&  <span class="label-text text-red-500">{errors.desc.message}</span>}
+            <label className="label">
+            {errors?.desc?.type === "required" &&  <span className="label-text text-red-500">{errors.desc.message}</span>}
               </label>
           </div>
           <div className=" p-3">

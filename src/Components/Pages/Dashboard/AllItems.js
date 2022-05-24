@@ -6,7 +6,7 @@ import ProductCard from "./ProductCard";
 
 const AllItems = () => {
   const { data, isLoading, refetch, error } = useQuery("available", () =>
-    fetch("http://localhost:5000/product").then((res) => res.json())
+    fetch("https://protected-peak-92782.herokuapp.com/product").then((res) => res.json())
   );
   if (isLoading) {
     return <Loading />;
@@ -16,8 +16,8 @@ const AllItems = () => {
       <h1 className="text-center capitalize text-4xl font-semibold py-4">
         All items
       </h1>
-      <div class="overflow-x-auto p-3">
-        <table class="table w-full">
+      <div className="overflow-x-auto p-3">
+        <table className="table w-full">
           {/* <!-- head --> */}
           <thead>
             <tr>

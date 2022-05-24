@@ -5,7 +5,7 @@ import AllProductCard from "./AllProductCard";
 const AllProducts = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/allproducts", getToken)
+    fetch("https://protected-peak-92782.herokuapp.com/allproducts", getToken)
       .then((res) => res.json())
       .then((data) => setData(data));
   }, []);

@@ -9,7 +9,7 @@ const useMakeUser = (user) => {
 
     // },[token])
     const email = user?.user.email
-    const url = `http://localhost:5000/users/${email}`
+    const url = `https://protected-peak-92782.herokuapp.com/users/${email}`
     if(user){
         fetch(url,{
             method:"PUT",

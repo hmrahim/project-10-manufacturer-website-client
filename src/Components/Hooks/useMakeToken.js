@@ -4,7 +4,7 @@ const useMakeToken = (user) => {
     const [token,setToken] = useState("")
     const email = user?.user.email
     if(user){
-        const url = `http://localhost:5000/users/${email}`
+        const url = `https://protected-peak-92782.herokuapp.com/users/${email}`
     }
 
 return [token,setToken]

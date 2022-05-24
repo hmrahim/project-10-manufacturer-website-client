@@ -11,7 +11,7 @@ const MyOrders = () => {
   const [user] = useAuthState(auth);
   const email = user?.email;
   const { data, isLoading, refetch } = useQuery(["available",email], () =>
-    fetch(`http://localhost:5000/order/${email}`, getToken).then((res) =>
+    fetch(`https://protected-peak-92782.herokuapp.com/order/${email}`, getToken).then((res) =>
       res.json()
     )
   );
@@ -23,8 +23,8 @@ const MyOrders = () => {
       <h1 className="text-center capitalize text-4xl font-semibold py-4">
         Manage Orders
       </h1>
-      <div class="overflow-x-auto p-3">
-        <table class="table w-full">
+      <div className="overflow-x-auto p-3">
+        <table className="table w-full">
           {/* <!-- head --> */}
           <thead>
             <tr>

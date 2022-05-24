@@ -10,7 +10,7 @@ import { toast } from "react-toastify";
 const Details = () => {
   const { id } = useParams();
   const { data, isLoading, refetch } = useQuery(["available",id], () =>
-    fetch(`http://localhost:5000/productdetails/${id}`).then((res) =>
+    fetch(`https://protected-peak-92782.herokuapp.com/productdetails/${id}`).then((res) =>
       res.json()
     )
   );
@@ -73,7 +73,7 @@ let quantityError;
         
       };
   
-      fetch("http://localhost:5000/order", {
+      fetch("https://protected-peak-92782.herokuapp.com/order", {
         method: "POST",
         headers: {
           "content-type": "application/json",
@@ -84,7 +84,7 @@ let quantityError;
         .then((res) => res.json())
         .then((data) => {
           toast.success("Your order is pending please complete the payment")
-          console.log(data);
+          // console.log(data);
           navigate("/completeorder")
         });
 
@@ -131,11 +131,11 @@ let quantityError;
      
 
           <form onSubmit={onSubmit} action="">
-            <div class="form-control">
-              <label class="label">
-                <span class="label-text">Enter Quantity</span>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Enter Quantity</span>
               </label>
-              <label class="input-group">
+              <label className="input-group">
                 <span
                   onClick={decrease}
                   className="bg-primary cursor-pointer select-none"
@@ -148,7 +148,7 @@ let quantityError;
                   value={qty}
                   type="number"
                   placeholder="10"
-                  class="input border-0 w-20"
+                  className="input border-0 w-20"
                 />
                 <span
                   onClick={increase}
@@ -175,21 +175,21 @@ let quantityError;
               </span>{" "}
             </label>
             <div className="grid md:grid-cols-2 lg:grid-cols-2 grid-cols-1 gap-5">
-              <div class="form-control w-full ">
-                <label class="label">
-                  <span class="label-text">Your Name</span>
+              <div className="form-control w-full ">
+                <label className="label">
+                  <span className="label-text">Your Name</span>
                 </label>
                 <input
                 name="name"
                   type="text"
                   placeholder="Your name"
-                  class="input input-bordered w-full "
+                  className="input input-bordered w-full "
                 />
                
               </div>
-              <div class="form-control w-full ">
-                <label class="label">
-                  <span class="label-text">Your Email</span>
+              <div className="form-control w-full ">
+                <label className="label">
+                  <span className="label-text">Your Email</span>
                 </label>
                 <input
                 name="email"
@@ -197,27 +197,27 @@ let quantityError;
                 disabled
                   type="text"
                   placeholder="Your Email"
-                  class="input input-bordered w-full "
+                  className="input input-bordered w-full "
                 />
              
               </div>
-              <div class="form-control w-full ">
-                <label class="label">
-                  <span class="label-text">Your Phone</span>
+              <div className="form-control w-full ">
+                <label className="label">
+                  <span className="label-text">Your Phone</span>
                 </label>
                 <input
                 name="phone"
                   type="text"
                   placeholder="Your Phone"
-                  class="input input-bordered w-full m"
+                  className="input input-bordered w-full m"
                 />
               
               </div>
-              <div class="form-control w-full ">
-                <label class="label">
-                  <span class="label-text">Your Address</span>
+              <div className="form-control w-full ">
+                <label className="label">
+                  <span className="label-text">Your Address</span>
                 </label>
-                <textarea  name="address" class="textarea" placeholder="Address..."></textarea>
+                <textarea  name="address" className="textarea" placeholder="Address..."></textarea>
               
               </div>
             </div>

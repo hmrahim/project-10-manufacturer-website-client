@@ -51,7 +51,7 @@ const Header = ({ children }) => {
     </>
   );
   const { pathname } = useLocation();
-  console.log(pathname);
+  // console.log(pathname);
 
   return (
     <div className="drawer drawer-end ">
@@ -64,13 +64,13 @@ const Header = ({ children }) => {
             {
               pathname.includes("dashboard") &&
                <label
-              for="my-drawer-2"
+              htmlFor="my-drawer-2"
               tabindex="0"
-              class="btn btn-ghost btn-circle md:hidden lg:hidden flex"
+              className="btn btn-ghost btn-circle md:hidden lg:hidden flex"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5"
+                className="h-5 w-5"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -87,7 +87,7 @@ const Header = ({ children }) => {
            
             <div className="flex-1 px-2 mx-2 ">Falcon-Electronics</div>
             <label
-              for="my-drawer-3"
+              htmlFor="my-drawer-3"
               className="btn btn-square btn-ghost flex md:hidden lg:hidden"
             >
               <svg
@@ -117,7 +117,7 @@ const Header = ({ children }) => {
         
       </div>
       <div className="drawer-side">
-        <label for="my-drawer-3" className="drawer-overlay"></label>
+        <label htmlFor="my-drawer-3" className="drawer-overlay"></label>
         <ul className="menu p-4 overflow-y-auto w-80 bg-base-100">
           {/* <!-- Sidebar content here --> */}
           {menu}

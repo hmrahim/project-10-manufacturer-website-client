@@ -13,7 +13,7 @@ const CheckoutForm = ({ data }) => {
   const price = parseInt(data.price) * parseInt(data.quantity);
 
   useEffect(() => {
-    fetch("http://localhost:5000/create-payment-intent", {
+    fetch("https://protected-peak-92782.herokuapp.com/create-payment-intent", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -29,7 +29,7 @@ const CheckoutForm = ({ data }) => {
     e.preventDefault();
     if (!stripe || !elements) {
       // Stripe.js has not loaded yet. Make sure to disable
-      // form submission until Stripe.js has loaded.
+      // htmlForm submission until Stripe.js has loaded.
       return;
     }
     const card = elements.getElement(CardElement);
@@ -74,12 +74,12 @@ const CheckoutForm = ({ data }) => {
       setCardError(intentError?.message);
       setSuccess(" ");
     } else {
-      console.log(paymentIntent);
+      // console.log(paymentIntent);
     }
     if (paymentIntent) {
       setSuccess("Success! your payment is complete, thank you");
       setTransId(paymentIntent.id)
-      console.log("payment",paymentIntent);
+      // console.log("payment",paymentIntent);
       const obj = {
         email: data.email,
         name: data.name,
@@ -87,7 +87,7 @@ const CheckoutForm = ({ data }) => {
         transactionId: paymentIntent.id,
       };
 
-      fetch(`http://localhost:5000/order/${data._id}`, {
+      fetch(`https://protected-peak-92782.herokuapp.com/order/${data._id}`, {
         method: "PATCH",
         headers: {
           "content-type": "application/json",

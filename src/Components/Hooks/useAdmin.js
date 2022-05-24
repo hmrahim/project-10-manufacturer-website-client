@@ -10,7 +10,7 @@ const useAdmin = ()=> {
   
    
   useEffect(()=> {
-    fetch(`http://localhost:5000/users/${user.email}`,getToken)
+    fetch(`https://protected-peak-92782.herokuapp.com/users/${user.email}`,getToken)
     .then(res=>res.json())
     .then(data => setAdmin(data.data))
   },[])

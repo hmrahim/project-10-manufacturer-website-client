@@ -1,14 +1,15 @@
 import React from 'react';
+import noimage from "../../../images/no-image.jpg"
 
 const ReviewCard = ({review}) => {
-    console.log(review);
+    // console.log(review);
     return (
         <div className=" bg-base-100  w-full m-4 p-4   shadow-xl rounded-lg">
           <div className="flex gap-3 items-center ">
-            <div class="avatar">
-              <div class="w-8 rounded">
+            <div className="avatar">
+              <div className="w-8 rounded">
                 <img
-                  src="https://api.lorem.space/image/face?hash=33791"
+                  src={noimage}
                   alt="Tailwind-CSS-Avatar-component"
                 />
               </div>
@@ -19,46 +20,46 @@ const ReviewCard = ({review}) => {
             <strong>Ratings: </strong>
           {
               review.rating == "1" &&
-              <div class="rating rating-sm">
-                <input type="radio" name="rating-6" class="mask mask-star-2 bg-orange-400" />
+              <div className="rating rating-sm">
+                <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" />
                 
                 </div>
           }
           {
               review.rating == "2" &&
-              <div class="rating rating-sm">
-                <input type="radio" name="rating-6" class="mask mask-star-2 bg-orange-400" />
-                <input type="radio" name="rating-6" class="mask mask-star-2 bg-orange-400" />
+              <div className="rating rating-sm">
+                <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" />
+                <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" />
                 
                 </div>
           }
           {
               review.rating == "3" &&
-              <div class="rating rating-sm">
-                <input type="radio" name="rating-6" class="mask mask-star-2 bg-orange-400" />
-                <input type="radio" name="rating-6" class="mask mask-star-2 bg-orange-400" />
-                <input type="radio" name="rating-6" class="mask mask-star-2 bg-orange-400" />
+              <div className="rating rating-sm">
+                <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" />
+                <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" />
+                <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" />
                 
                 </div>
           }
           {
               review.rating == "4" &&
-              <div class="rating rating-sm">
-                <input type="radio" name="rating-6" class="mask mask-star-2 bg-orange-400" />
-                <input type="radio" name="rating-6" class="mask mask-star-2 bg-orange-400" />
-                <input type="radio" name="rating-6" class="mask mask-star-2 bg-orange-400" />
-                <input type="radio" name="rating-6" class="mask mask-star-2 bg-orange-400" />
+              <div className="rating rating-sm">
+                <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" />
+                <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" />
+                <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" />
+                <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" />
                 
                 </div>
           }
           {
               review.rating == "5" &&
-              <div class="rating rating-sm">
-                <input type="radio" name="rating-6" class="mask mask-star-2 bg-orange-400" />
-                <input type="radio" name="rating-6" class="mask mask-star-2 bg-orange-400" />
-                <input type="radio" name="rating-6" class="mask mask-star-2 bg-orange-400" />
-                <input type="radio" name="rating-6" class="mask mask-star-2 bg-orange-400" />
-                <input type="radio" name="rating-6" class="mask mask-star-2 bg-orange-400" />
+              <div className="rating rating-sm">
+                <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" />
+                <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" />
+                <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" />
+                <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" />
+                <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" />
                 
                 </div>
           }
@@ -67,11 +68,7 @@ const ReviewCard = ({review}) => {
           <div className="flex gap-2">
             <strong>Review:</strong>{" "}
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
-              neque eveniet distinctio, quisquam libero voluptatem labore sit
-              culpa iste iure perspiciatis reiciendis ex facilis laboriosam
-              nobis ratione repellat quis laborum. Consequuntur porro quia
-              
+             {review.review}
             </p>
           </div>
         </div>

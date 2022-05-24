@@ -17,7 +17,7 @@ const UpdateProduct = () => {
   const [desc, setDesc] = useState("");
   const [image, setImage] = useState("");
   useEffect(() => {
-    fetch(`http://localhost:5000/product/${id}`)
+    fetch(`https://protected-peak-92782.herokuapp.com/product/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setTitle(data.title);
@@ -41,7 +41,7 @@ const UpdateProduct = () => {
       desc: e.target.desc.value,
       image: e.target.image.value,
     };
-    fetch(`http://localhost:5000/product/${id}`, {
+    fetch(`https://protected-peak-92782.herokuapp.com/product/${id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -50,7 +50,7 @@ const UpdateProduct = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         toast.success("Product uploaded succesfully!");
         navigate("/dashboard/allproducts")
       });
@@ -66,8 +66,8 @@ const UpdateProduct = () => {
         <form onSubmit={updateForm} action="">
           <div className="grid md:grid-cols-2 grid-cols-1">
             <div className="flex flex-col p-3">
-              <label class="label">
-                <span class="label-text">Product title</span>
+              <label className="label">
+                <span className="label-text">Product title</span>
               </label>
               <input
                 onChange={(e) => setTitle(e.target.value)}
@@ -75,12 +75,12 @@ const UpdateProduct = () => {
                 name="title"
                 type="text"
                 placeholder="Type here"
-                class="input input-bordered w-full max-w-xs"
+                className="input input-bordered w-full max-w-xs"
               />
             </div>
             <div className="flex flex-col p-3">
-              <label class="label">
-                <span class="label-text">Product Price</span>
+              <label className="label">
+                <span className="label-text">Product Price</span>
               </label>
               <input
                 onChange={(e) => setPrice(e.target.value)}
@@ -88,12 +88,12 @@ const UpdateProduct = () => {
                 name="price"
                 type="number"
                 placeholder="Type here"
-                class="input input-bordered w-full max-w-xs"
+                className="input input-bordered w-full max-w-xs"
               />
             </div>
             <div className="flex flex-col p-3">
-              <label class="label">
-                <span class="label-text">Product Quantity</span>
+              <label className="label">
+                <span className="label-text">Product Quantity</span>
               </label>
               <input
                 onChange={(e) => setQuantity(e.target.value)}
@@ -101,12 +101,12 @@ const UpdateProduct = () => {
                 name="quantity"
                 type="number"
                 placeholder="Type here"
-                class="input input-bordered w-full max-w-xs"
+                className="input input-bordered w-full max-w-xs"
               />
             </div>
             <div className="flex flex-col p-3">
-              <label class="label">
-                <span class="label-text">Minimum Order Quantity</span>
+              <label className="label">
+                <span className="label-text">Minimum Order Quantity</span>
               </label>
               <input
                 onChange={(e) => setMinqty(e.target.value)}
@@ -114,18 +114,18 @@ const UpdateProduct = () => {
                 name="minqty"
                 type="number"
                 placeholder="Type here"
-                class="input input-bordered w-full max-w-xs"
+                className="input input-bordered w-full max-w-xs"
               />
             </div>
             <div className="flex flex-col p-3">
-              <label class="label">
-                <span class="label-text">Product Categorie</span>
+              <label className="label">
+                <span className="label-text">Product Categorie</span>
               </label>
               <select
                 name="categorie"
                 onChange={(e) => setCategorie(e.target.value)}
                 value={categorie}
-                class="select select-bordered w-full max-w-xs"
+                className="select select-bordered w-full max-w-xs"
               >
                 <option disabled selected>
                   Who shot first?
@@ -133,30 +133,30 @@ const UpdateProduct = () => {
                 <option>Han Solo</option>
                 <option>Greedo</option>
               </select>
-              <label class="label"></label>
+              <label className="label"></label>
             </div>
             <div className="flex flex-col p-3">
-              <label class="label">
-                <span class="label-text">Product Image</span>
+              <label className="label">
+                <span className="label-text">Product Image</span>
               </label>
               <input
                 name="image"
                 onChange={(e) => setImage(e.target.value)}
                 value={image}
                 type="text"
-                class="input input-bordered w-full max-w-xs"
+                className="input input-bordered w-full max-w-xs"
               />
             </div>
           </div>
           <div className="flex flex-col p-3">
-            <label class="label">
-              <span class="label-text">Product Description</span>
+            <label className="label">
+              <span className="label-text">Product Description</span>
             </label>
             <textarea
               name="desc"
               onChange={(e) => setDesc(e.target.value)}
               value={desc}
-              class="textarea textarea-bordered"
+              className="textarea textarea-bordered"
               placeholder="Bio"
             ></textarea>
           </div>
