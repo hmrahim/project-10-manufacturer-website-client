@@ -52,8 +52,8 @@ const Payment = () => {
               <h3 className="text-xl my-2 ">Your Email: {data.email}</h3>
             </div>
           </div>
-          <div className="bg-base-100 flex-1 p-5 ">
-            <div className="">
+          <div className="flex-1 md:p-5  flex justify-center items-center ">
+            <div className="h-40 w-full bg-base-100 rounded-lg p-5 pt-10 mb-5 md:mb-0">
               <Elements stripe={stripePromise}>
                 <CheckoutForm data={data} />
               </Elements>

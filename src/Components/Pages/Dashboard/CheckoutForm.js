@@ -5,6 +5,7 @@ import React, { useEffect, useState } from "react";
 const CheckoutForm = ({ data }) => {
   const [cardError, setCardError] = useState("");
   const [success, setSuccess] = useState("");
+  const [transId, setTransId] = useState("");
   const [loading, setLoading] = useState(false);
   const [clientSecret, setClientSecret] = useState("");
   const stripe = useStripe();
@@ -77,6 +78,7 @@ const CheckoutForm = ({ data }) => {
     }
     if (paymentIntent) {
       setSuccess("Success! your payment is complete, thank you");
+      setTransId(paymentIntent.id)
       console.log("payment",paymentIntent);
       const obj = {
         email: data.email,
@@ -139,6 +141,7 @@ const CheckoutForm = ({ data }) => {
       </form>
       {cardError && <p className="text-red-500 text-[14px]">{cardError}</p>}
       {success && <p className="text-green-500 text-[14px]">{success}</p>}
+      {transId && <p className="text-red-500 text-[14px] font-semibold">Transaction Id: {transId}</p>}
     </div>
   );
 };

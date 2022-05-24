@@ -20,6 +20,9 @@ import ManageOrders from "./Components/Pages/Dashboard/ManageOrders";
 import MyOrders from "./Components/Pages/Dashboard/MyOrders";
 import CompleteOrder from "./Components/Pages/Home/CompleteOrder";
 import Payment from "./Components/Pages/Dashboard/Payment";
+import Profile from "./Components/Pages/Dashboard/Profile"
+import Reviews from "./Components/Pages/Dashboard/Reviews"
+import UpdateProfile from "./Components/Pages/Dashboard/UpdateProfile";
 
 function App() {
   return (
@@ -40,6 +43,9 @@ function App() {
               </Route>
               <Route path="myorders" element={<MyOrders />} />
               <Route path="payment/:id" element={<Payment />} />
+              <Route path="profile" element={<Profile/>} />
+              <Route path="reviews" element={<Reviews/>} />
+              <Route path="updateprofile/:id" element={<UpdateProfile/>} />
 
               <Route path="additems" element={<AddItem />}></Route>
               <Route path="allproducts" element={<AllItems />}></Route>

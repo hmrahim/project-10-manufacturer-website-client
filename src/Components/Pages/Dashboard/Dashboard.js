@@ -48,6 +48,16 @@ const Dashboard = () => {
               My Orders
             </NavLink>
           </li>
+          <li>
+            <NavLink className="mt-2" to="/dashboard/reviews">
+             Add a review
+            </NavLink>
+          </li>
+          <li>
+            <NavLink className="mt-2" to="/dashboard/profile">
+             My Profile
+            </NavLink>
+          </li>
         </ul>
       </div>
       

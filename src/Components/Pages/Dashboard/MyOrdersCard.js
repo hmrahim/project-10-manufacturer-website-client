@@ -1,16 +1,39 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
 
 const MyOrdersCard = ({ product, refetch, index }) => {
   const cancelOrder = (id)=> {
-    fetch(`http://localhost:5000/order/${id}`,{
-      method:"DELETE",
-      headers:{
-        "content-type":"application/json"
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, cancel it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire(
+          'Cancelled!',
+          'Your order has been cancelled.',
+          'success'
+        )
+        fetch(`http://localhost:5000/order/${id}`,{
+          method:"DELETE",
+          headers:{
+            "content-type":"application/json"
+          }
+        })
+        .then(res=>res.json())
+        .then(data=>console.log(data))
+
+
       }
     })
-    .then(res=>res.json())
-    .then(data=>console.log(data))
+
+  
 
   }
     refetch()
