@@ -33,7 +33,7 @@ const Portfolio = () => {
               </div>
             </div>
 
-            <h1 className="uppercase  select-none text-2xl font-semibold text-center md:text-left bg-info p-3 m-2 rounded-full">
+            <h1 className="uppercase  select-none text-2xl font-semibold text-center md:text-left bg-base-100 p-3 m-2 rounded-full">
               Hm rahim
             </h1>
           </div>
@@ -137,7 +137,7 @@ const Portfolio = () => {
                 <div className="my-3 grid grid-cols-1 gap-5">
 
 
-                  <div className="flex gap-3 bg-info rounded-md cursor-pointer">
+                  <div className="flex gap-3 bg-base-100 rounded-md cursor-pointer">
                     <div class="avatar ">
                       <div class="w-20 rounded rounded-r-none">
                         <img
@@ -153,7 +153,7 @@ const Portfolio = () => {
                     </div>
                   </div>
                  
-                  <div className="flex gap-3 bg-info rounded-md cursor-pointer">
+                  <div className="flex gap-3 bg-base-100 rounded-md cursor-pointer">
                     <div class="avatar ">
                       <div class="w-20 rounded rounded-r-none">
                         <img
@@ -169,7 +169,7 @@ const Portfolio = () => {
                     </div>
                   </div>
 
-                  <div className="flex gap-3 bg-info rounded-md cursor-pointer">
+                  <div className="flex gap-3 bg-base-100 rounded-md cursor-pointer">
                     <div class="avatar ">
                       <div class="w-20 rounded rounded-r-none">
                         <img
