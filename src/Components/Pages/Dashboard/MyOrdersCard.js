@@ -46,6 +46,7 @@ const MyOrdersCard = ({ product, refetch, index }) => {
       <td>{product.title}</td>
       <td>{product.quantity}</td>
       <td>${product.price}</td>
+      <td className="text-red-500">{product?.transactionId ? product.transactionId : "Payment not complete"}</td>
       <td>
         <div className="avatar">
           <div className="w-16 rounded">

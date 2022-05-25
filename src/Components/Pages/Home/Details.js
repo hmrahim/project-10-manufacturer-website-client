@@ -223,7 +223,7 @@ let quantityError;
             </div>
 
             <div>
-              <button className="btn btn-primary mt-5">Order Now</button>
+              <button className={`btn btn-primary mt-5 ${parseInt(data.quantity) < parseInt(qty) && "btn-disabled"} ${parseInt(qty) < 100 && "btn-disabled"}`}>Order Now</button>
             </div>
           </form>
         </div>
