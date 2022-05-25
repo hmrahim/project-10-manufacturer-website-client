@@ -49,7 +49,7 @@ const AddItem = () => {
 
     }
   return (
-    <div className="mt-5 bg-base-300 rounded-lg w-9/12 mx-auto">
+    <div className="mt-5 bg-base-300 rounded-lg md:w-9/12 w-full pb-20 md:pb-0 mx-auto">
       <h1 className="text-center capitalize text-4xl font-semibold py-4">
         add items
       </h1>
@@ -64,7 +64,7 @@ const AddItem = () => {
               <input
                 type="text"
                 placeholder="Type here"
-                className="input input-bordered w-full max-w-xs"
+                className="input input-bordered w-full "
                 
                 {...register("title",{
                     required:{
@@ -86,7 +86,7 @@ const AddItem = () => {
               <input
                 type="number"
                 placeholder="Type here"
-                className="input input-bordered w-full max-w-xs"
+                className="input input-bordered w-full "
                 {...register("price",{
                     required:{
                         value:true,
@@ -105,7 +105,7 @@ const AddItem = () => {
               <input
                 type="number"
                 placeholder="Type here"
-                className="input input-bordered w-full max-w-xs"
+                className="input input-bordered w-full "
                 {...register("quantity",{
                     required:{
                         value:true,
@@ -124,7 +124,7 @@ const AddItem = () => {
               <input
                 type="number"
                 placeholder="Type here"
-                className="input input-bordered w-full max-w-xs"
+                className="input input-bordered w-full "
                 {...register("minquantity",{
                     required:{
                         value:true,
@@ -140,7 +140,7 @@ const AddItem = () => {
             <label className="label">
                 <span className="label-text">Product Categorie</span>
               </label>
-              <select className="select select-bordered w-full max-w-xs"
+              <select className="select select-bordered w-full "
                {...register("categorie",{
                 required:{
                     value:true,
@@ -164,7 +164,7 @@ const AddItem = () => {
               </label>
               <input 
               type="file" 
-              className="input input-bordered w-full max-w-xs"
+              className="input input-bordered w-full "
               {...register("image",{
                 required:{
                     value:true,

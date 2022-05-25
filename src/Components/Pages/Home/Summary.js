@@ -57,7 +57,7 @@ const Summary = () => {
         </div>
         <div className="stat-value">33K+</div>
         <div className="stat-title">Reviews</div>
-        <div className="stat-desc text-secondary">31 tasks remaining</div>
+        
       </div>
     </div>
    </div>

@@ -17,7 +17,7 @@ const Messages = () => {
     return <Loading />;
   }
   return (
-    <div className="mt-5 bg-base-300 rounded-lg w-full mx-auto">
+    <div className="mt-5 bg-base-300 rounded-lg w-full mx-auto pb-20 md:pb-0">
         <h1 className="text-4xl text-center capitalize my-3 p-2">Customer Messages</h1>
         
       <div className="overflow-x-auto w-full">

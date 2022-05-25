@@ -222,7 +222,7 @@ const UpdateProfile = () => {
           </div>
         </div>
         
-        <button className="btn btn-primary my-4"> {loading ? "Updating..." : "Update profile"} </button>
+        <button className="btn btn-primary my-10 md:my-5 "> {loading ? "Updating..." : "Update profile"} </button>
       </form>
     </div>
   );

@@ -19,7 +19,7 @@ const MyOrders = () => {
     return <Loading />;
   }
   return (
-    <div className="mt-5 bg-base-300 rounded-lg w-full mx-auto">
+    <div className="mt-5 bg-base-300 rounded-lg w-full mx-auto pb-20 md:pb-0">
       <h1 className="text-center capitalize text-4xl font-semibold py-4">
         Manage Orders
       </h1>

@@ -22,7 +22,7 @@ const Users = () => {
    
   return (
     <div>
-      <div className="overflow-x-auto w-full">
+      <div className="overflow-x-auto w-full pb-20 md:pb-0">
         <table className="table w-full">
           {/* <!-- head --> */}
           <thead>

@@ -14,10 +14,16 @@ import {
 import image from "../../../images/my-image.png";
 import Footer from "../Footer/Footer";
 import { Link } from "react-router-dom";
+import { Helmet, HelmetProvider } from "react-helmet-async";
+
 const Portfolio = () => {
   const element = <FontAwesomeIcon icon={faSchool} />;
   return (
     <div className="w-full   mx-auto px-6 md:px-0 ">
+        <Helmet>
+        <title>Falcon-Portfolio</title>
+        <link rel="canonical" href="https://www.tacobell.com/" />
+      </Helmet>
       <div className="p-5 bg-base-300   my-5 w-full my-5  md:w-9/12  rounded-lg  mx-auto">
         <div className="flex flex-col md:flex-row  justify-center md:justify-start items-center md:items-start  ">
           <div className="md:w-3/12 flex flex-col justify-center items-center">
