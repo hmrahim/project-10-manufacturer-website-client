@@ -1,6 +1,9 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
+
 
 const UserRow = ({ user, index,refetch }) => {
     const updateRole = (e)=> {
@@ -24,6 +27,43 @@ const UserRow = ({ user, index,refetch }) => {
         })
 
     }
+
+
+    const deleteUser = (id)=> {
+      console.log(id);
+      Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire(
+            'Deleted!',
+            'Your order has been deleted.',
+            'success'
+          )
+          fetch(`https://protected-peak-92782.herokuapp.com/users/${id}`,{
+            method:"DELETE",
+            headers:{
+              "content-type":"application/json",
+              authorization:`bearer ${localStorage.getItem("token")}`
+            }
+          })
+          .then(res=>res.json())
+          .then(data=>console.log(data))
+  
+  
+        }
+      })
+  
+    
+  
+    }
+
     refetch()
   return (
     <tr>
@@ -52,7 +92,7 @@ const UserRow = ({ user, index,refetch }) => {
       </td>
       <td className="text-center">
        
-        <button className="btn btn-xs btn-error ml-2 btn-outline">
+        <button onClick={()=> deleteUser(user._id)} className="btn btn-xs btn-error ml-2 btn-outline">
           Delete
         </button>
       </td>
