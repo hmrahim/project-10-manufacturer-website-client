@@ -5,6 +5,7 @@ import { useCreateUserWithEmailAndPassword,useSignInWithGoogle,useUpdateProfile 
 import auth from "../../../../firebase.init"
 import { ToastContainer, toast } from 'react-toastify';
 import useMakeUser from "../../../Hooks/useMakeUser";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 
 const Signup = () => {
   const [createUserWithEmailAndPassword, SignupUser, SignupLoading, SignupError] =
@@ -25,9 +26,11 @@ console.log(SignupUser || googleUser);
 
 
   const onSubmit = (data) => {
+    console.log(data);
     createUserWithEmailAndPassword(data.email,data.password)
+    
     .then(()=> {
-     updateProfile({displayName:data.name})
+     updateProfile({displayName:data.title})
      .then(async()=> {
        await sendEmailVerification()
        toast.success("Verification email sent please veriy your account")
@@ -47,6 +50,10 @@ console.log(SignupUser || googleUser);
   }
   return (
     <div className="md:w-2/6 lg:w-2/6 w-full px-6 md:px-0 mx-auto bg-base-300 my-10 rounded-lg">
+       <Helmet>
+        <title>Falcon-Signup</title>
+        <link rel="canonical" href="https://www.tacobell.com/" />
+      </Helmet>
       <h1 className="text-4xl text-center font-semibold py-4">Signup</h1>
       <div className="p-5">
         <form onSubmit={handleSubmit(onSubmit)} action="">

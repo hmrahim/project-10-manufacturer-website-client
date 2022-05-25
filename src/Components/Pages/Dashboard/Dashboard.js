@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import useAdmin from "../../Hooks/useAdmin";
 import Footer from "../Footer/Footer"
+import { Helmet, HelmetProvider } from "react-helmet-async";
 
 const Dashboard = () => {
   const [admin, setAdmin] = useAdmin();
@@ -10,6 +11,10 @@ const Dashboard = () => {
     
    
     <div className="drawer drawer-mobile">
+       <Helmet>
+        <title>Falcon-Dashboard</title>
+        <link rel="canonical" href="https://www.tacobell.com/" />
+      </Helmet>
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content  p-3 bg-info">
         {/* <!-- Page content here --> */}

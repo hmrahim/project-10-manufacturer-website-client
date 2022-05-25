@@ -23,7 +23,7 @@ const BlogsRow = ({index,blog,refetch}) => {
               'Your order has been cancelled.',
               'success'
             )
-            fetch(`http://localhost:5000/blogs/${id}`,{
+            fetch(`https://protected-peak-92782.herokuapp.com/blogs/${id}`,{
               method:"DELETE",
               headers:{
                 "content-type":"application/json",

@@ -31,6 +31,7 @@ import Blog from "./Components/Pages/Blog/Blog";
 import AllBlogs from "./Components/Pages/Dashboard/AllBlogs";
 import AddBlog from "./Components/Pages/Dashboard/AddBlog";
 import NotFound from "./Components/Pages/NotFound/NotFound";
+import Portfolio from "./Components/Pages/Portfolio/Portfolio";
 
 function App() {
   return (
@@ -72,6 +73,7 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/forgotpass" element={<ForgotPass />} />
           <Route path="/blogs" element={<Blog/>} />
+          <Route path="/portfolio" element={<Portfolio/>} />
           <Route path="*" element={<NotFound/>} />
         </Routes>
       </Header>

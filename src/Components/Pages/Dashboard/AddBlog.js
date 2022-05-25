@@ -15,7 +15,7 @@ const AddBlog = () => {
     // console.log(data);
     // console.log(obj);
 
-    fetch("http://localhost:5000/blogs", {
+    fetch("https://protected-peak-92782.herokuapp.com/blogs", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -36,14 +36,14 @@ const AddBlog = () => {
       <hr />
       <form onSubmit={handleSubmit(onsubmit)} action="">
         <div className="grid grid-cols-1  gap-5">
-          <div class="form-control w-full ">
-            <label class="label">
-              <span class="label-text">Your Name</span>
+          <div className="form-control w-full ">
+            <label className="label">
+              <span className="label-text">Your Name</span>
             </label>
             <input
               type="text"
               placeholder="Type here"
-              class="input input-bordered w-full "
+              className="input input-bordered w-full "
               {...register("title", {
                 required: {
                   value: true,
@@ -51,9 +51,9 @@ const AddBlog = () => {
                 },
               })}
             />
-            <label class="label">
+            <label className="label">
               {errors?.title?.type === "required" && (
-                <span class="label-text-alt text-red-500">
+                <span className="label-text-alt text-red-500">
                   {errors.title.message}
                 </span>
               )}
@@ -62,12 +62,12 @@ const AddBlog = () => {
           
          
           
-          <div class="form-control w-full ">
-            <label class="label">
-              <span class="label-text">Blog Description</span>
+          <div className="form-control w-full ">
+            <label className="label">
+              <span className="label-text">Blog Description</span>
             </label>
             <textarea
-              class="textarea textarea-bordered"
+              className="textarea textarea-bordered"
               placeholder="Blog description"
               {...register("blog", {
                 required: {
@@ -76,9 +76,9 @@ const AddBlog = () => {
                 },
               })}
             ></textarea>
-            <label class="label">
+            <label className="label">
               {errors?.blog?.type === "required" && (
-                <span class="label-text-alt text-red-500">
+                <span className="label-text-alt text-red-500">
                   {errors.blog.message}
                 </span>
               )}

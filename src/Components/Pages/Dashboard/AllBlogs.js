@@ -6,7 +6,7 @@ import BlogsRow from './BlogsRow';
 import Loading from './Loading';
 
 const AllBlogs = () => {
-    const {data,isLoading,refetch} = useQuery("blog",()=> fetch("http://localhost:5000/blogs",getToken).then(res=>res.json()))
+    const {data,isLoading,refetch} = useQuery("blog",()=> fetch("https://protected-peak-92782.herokuapp.com/blogs",getToken).then(res=>res.json()))
    if(isLoading){
        return <Loading/>
    }

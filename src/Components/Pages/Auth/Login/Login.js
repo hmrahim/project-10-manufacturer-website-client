@@ -7,6 +7,7 @@ import { toast } from "react-toastify";
 import useMakeToken from "../../../Hooks/useMakeToken";
 import useMakeUser from "../../../Hooks/useMakeUser";
 import { GoogleAuthProvider } from "firebase/auth";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 
 const Login = () => {
     const [
@@ -54,6 +55,10 @@ const Login = () => {
   }
   return (
     <div className="md:w-2/6 lg:w-2/6 w-full px-6 md:px-0 mx-auto bg-base-300 my-10 rounded-lg">
+       <Helmet>
+        <title>Falcon-Login</title>
+        <link rel="canonical" href="https://www.tacobell.com/" />
+      </Helmet>
       <h1 className="text-4xl text-center font-semibold py-4">Login</h1>
       <div className="p-5">
         <form onSubmit={handleSubmit(onSubmit)} action="">

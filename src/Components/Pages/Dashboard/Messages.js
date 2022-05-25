@@ -6,7 +6,7 @@ import MessageRow from "./MessageRow";
 
 const Messages = () => {
   const { data, isLoading, refetch } = useQuery("message", () =>
-    fetch("http://localhost:5000/message", getToken).then((res) => res.json())
+    fetch("https://protected-peak-92782.herokuapp.com/message", getToken).then((res) => res.json())
   );
 
  

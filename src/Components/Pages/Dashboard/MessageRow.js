@@ -18,7 +18,7 @@ const MessageRow = ({ message, index, refetch }) => {
     }).then((result) => {
       if (result.isConfirmed) {
         Swal.fire("Deleted!", "Your file has been deleted.", "success");
-        fetch(`http://localhost:5000/message/${id}`, {
+        fetch(`https://protected-peak-92782.herokuapp.com/message/${id}`, {
           method: "DELETE",
           headers: {
             "content-type": "application/json",

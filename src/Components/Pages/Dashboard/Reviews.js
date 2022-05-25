@@ -22,7 +22,7 @@ const Reviews = () => {
     // console.log(data);
     // console.log(obj);
 
-    fetch("http://localhost:5000/reviews", {
+    fetch("https://protected-peak-92782.herokuapp.com/reviews", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -42,14 +42,14 @@ const Reviews = () => {
       <hr />
       <form onSubmit={handleSubmit(onsubmit)} action="">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-          <div class="form-control w-full ">
-            <label class="label">
-              <span class="label-text">Your Name</span>
+          <div className="form-control w-full ">
+            <label className="label">
+              <span className="label-text">Your Name</span>
             </label>
             <input
               type="text"
               placeholder="Type here"
-              class="input input-bordered w-full "
+              className="input input-bordered w-full "
               {...register("title", {
                 required: {
                   value: true,
@@ -57,22 +57,22 @@ const Reviews = () => {
                 },
               })}
             />
-            <label class="label">
+            <label className="label">
               {errors?.name?.type === "required" && (
-                <span class="label-text-alt text-red-500">
+                <span className="label-text-alt text-red-500">
                   {errors.name.message}
                 </span>
               )}
             </label>
           </div>
-          <div class="form-control w-full ">
-            <label class="label">
-              <span class="label-text">Your Email</span>
+          <div className="form-control w-full ">
+            <label className="label">
+              <span className="label-text">Your Email</span>
             </label>
             <input
               type="text"
               placeholder="Type here"
-              class="input input-bordered w-full "
+              className="input input-bordered w-full "
               {...register("email", {
                 required: {
                   value: true,
@@ -84,27 +84,27 @@ const Reviews = () => {
                 },
               })}
             />
-            <label class="label">
+            <label className="label">
               {errors?.email?.type === "required" && (
-                <span class="label-text-alt text-red-500">
+                <span className="label-text-alt text-red-500">
                   {errors.email.message}
                 </span>
               )}
               {errors?.email?.type === "pattern" && (
-                <span class="label-text-alt text-red-500">
+                <span className="label-text-alt text-red-500">
                   {errors.email.message}
                 </span>
               )}
             </label>
           </div>
-          <div class="form-control w-full ">
-            <label class="label">
-              <span class="label-text">Your Phone</span>
+          <div className="form-control w-full ">
+            <label className="label">
+              <span className="label-text">Your Phone</span>
             </label>
             <input
               type="number"
               placeholder="Type here"
-              class="input input-bordered w-full "
+              className="input input-bordered w-full "
               {...register("phone", {
                 required: {
                   value: true,
@@ -116,25 +116,25 @@ const Reviews = () => {
                 },
               })}
             />
-            <label class="label">
+            <label className="label">
               {errors?.phone?.type === "required" && (
-                <span class="label-text-alt text-red-500">
+                <span className="label-text-alt text-red-500">
                   {errors.phone.message}
                 </span>
               )}
               {errors?.phone?.type === "minLength" && (
-                <span class="label-text-alt text-red-500">
+                <span className="label-text-alt text-red-500">
                   {errors.phone.message}
                 </span>
               )}
             </label>
           </div>
-          <div class="form-control w-full ">
-            <label class="label">
-              <span class="label-text">Your Ratings (Max: 5 star)</span>
+          <div className="form-control w-full ">
+            <label className="label">
+              <span className="label-text">Your Ratings (Max: 5 star)</span>
             </label>
             <select
-              class="select w-full max-w-xs"
+              className="select w-full max-w-xs"
               {...register("rating", {
                 required: {
                   value: true,
@@ -151,20 +151,20 @@ const Reviews = () => {
              
             </select>
 
-            <label class="label">
+            <label className="label">
               {errors?.reting?.type === "required" && (
-                <span class="label-text-alt text-red-500">
+                <span className="label-text-alt text-red-500">
                   {errors.reting.message}
                 </span>
               )}
             </label>
           </div>
-          <div class="form-control w-full ">
-            <label class="label">
-              <span class="label-text">Your Review</span>
+          <div className="form-control w-full ">
+            <label className="label">
+              <span className="label-text">Your Review</span>
             </label>
             <textarea
-              class="textarea textarea-bordered"
+              className="textarea textarea-bordered"
               placeholder="Review"
               {...register("review", {
                 required: {
@@ -173,9 +173,9 @@ const Reviews = () => {
                 },
               })}
             ></textarea>
-            <label class="label">
+            <label className="label">
               {errors?.review?.type === "required" && (
-                <span class="label-text-alt text-red-500">
+                <span className="label-text-alt text-red-500">
                   {errors.review.message}
                 </span>
               )}

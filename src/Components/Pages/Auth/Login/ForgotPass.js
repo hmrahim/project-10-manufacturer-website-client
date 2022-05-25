@@ -6,6 +6,7 @@ import atuh from "../../../../firebase.init";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { toast } from "react-toastify";
 import { async } from "@firebase/util";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 
 const ForgotPass = () => {
     const [user] = useAuthState(atuh)
@@ -26,6 +27,10 @@ const ForgotPass = () => {
   };
   return (
     <div className="md:w-2/6 lg:w-2/6 w-full px-6 md:px-0 mx-auto bg-base-300 my-10 rounded-lg">
+        <Helmet>
+        <title>Falcon-Reset-Password</title>
+        <link rel="canonical" href="https://www.tacobell.com/" />
+      </Helmet>
       <h1 className="text-4xl text-center font-semibold py-4">Reset Password</h1>
       <div className="p-5">
         <form onSubmit={handleSubmit(onSubmit)} action="">

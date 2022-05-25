@@ -27,7 +27,7 @@ const Header = ({ children }) => {
       </li>
       <li>
         <NavLink className="rounded-lg ml-2" to="/portfolio">
-          Portfolio
+          My Portfolio
         </NavLink>
       </li>
       <li>
@@ -85,7 +85,7 @@ const Header = ({ children }) => {
             </label>
             }
            
-            <div className="flex-1 px-2 mx-2 ">Falcon-Electronics</div>
+            <div className="flex-1 px-2 mx-2 text-3xl">Falcon-Electronics</div>
             <label
               htmlFor="my-drawer-3"
               className="btn btn-square btn-ghost flex md:hidden lg:hidden"

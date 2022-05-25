@@ -1,5 +1,6 @@
 import React from "react";
 
+
 const BlogCard = ({index,blog,refetch}) => {
  
     refetch()

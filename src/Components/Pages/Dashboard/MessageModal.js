@@ -7,7 +7,7 @@ import Loading from "./Loading";
 const MessageModal = () => {
     const {id} = useParams()
     const { data, isLoading, refetch } = useQuery(["message",id], () =>
-    fetch(`http://localhost:5000/message/${id}`, getToken).then((res) => res.json())
+    fetch(`https://protected-peak-92782.herokuapp.com/message/${id}`, getToken).then((res) => res.json())
   );
 
  console.log(data);
