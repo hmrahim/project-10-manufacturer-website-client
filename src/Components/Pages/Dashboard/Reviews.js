@@ -11,9 +11,10 @@ const Reviews = () => {
   } = useForm();
 
   const onsubmit = (data) => {
+    console.log(data);
    
     const obj = {
-      name: data.name,
+      name: data.title,
       email: data.email,
       phone: data.phone,
       review: data.review,
