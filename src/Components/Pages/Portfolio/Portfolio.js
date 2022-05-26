@@ -19,7 +19,7 @@ import { Helmet, HelmetProvider } from "react-helmet-async";
 const Portfolio = () => {
   const element = <FontAwesomeIcon icon={faSchool} />;
   return (
-    <div className="w-full   mx-auto px-6 md:px-0 ">
+    <div className="w-full   mx-auto px-0 md:px-0 ">
         <Helmet>
         <title>Falcon-Portfolio</title>
         <link rel="canonical" href="https://www.tacobell.com/" />
@@ -28,7 +28,7 @@ const Portfolio = () => {
         <div className="flex flex-col md:flex-row  justify-center md:justify-start items-center md:items-start  ">
           <div className="md:w-3/12 flex flex-col justify-center items-center">
             <div class="avatar  ">
-              <div class="md:w-36 w-36 mf:border-2 rounded-xl">
+              <div class="md:w-36 w-36 border-2 rounded-xl">
                 <img src={image} />
               </div>
             </div>
@@ -38,7 +38,7 @@ const Portfolio = () => {
             </h1>
           </div>
 
-          <div className="flex flex-col gap-5 md:flex-row md:w-9/12 px-5 border m-3">
+          <div className="flex flex-col gap-5 md:flex-row md:w-9/12 w-full rounded-lg px-2 md:px-5 md:border m-3">
             <div className="grid md:grid-cols-2 grid-cols-1 ">
               <div>
                 <h1 className="capitalize text-2xl font-semibold underline p-2">
