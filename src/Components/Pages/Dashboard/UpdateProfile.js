@@ -110,7 +110,7 @@ const UpdateProfile = () => {
     }
   
   return (
-    <div className="md:w-3/5 w-full bg-base-300 mx-auto p-3 rounded-lg ">
+    <div className="md:w-3/5 w-full bg-base-100 mx-auto p-3 rounded-lg ">
       <h1 className="text-4xl text-center capitalize my-3">update Profile</h1>
       <hr />
       <form onSubmit={submit} action="">

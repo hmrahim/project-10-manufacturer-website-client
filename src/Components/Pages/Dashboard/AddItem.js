@@ -49,7 +49,7 @@ const AddItem = () => {
 
     }
   return (
-    <div className="mt-5 bg-base-300 rounded-lg md:w-9/12 w-full pb-20 md:pb-0 mx-auto">
+    <div className="mt-5 bg-base-100 rounded-lg md:w-9/12 w-full pb-20 md:pb-0 mx-auto">
       <h1 className="text-center capitalize text-4xl font-semibold py-4">
         add items
       </h1>
@@ -151,8 +151,9 @@ const AddItem = () => {
                 <option disabled selected>
                   Who shot first?
                 </option>
-                <option>Han Solo</option>
-                <option>Greedo</option>
+                <option value="Electronics">Electronics</option>
+                <option value="Electric">Electric</option>
+             
               </select>
               <label className="label">
               {errors?.categorie?.type === "required" &&  <span className="label-text text-red-500">{errors.categorie.message}</span>}

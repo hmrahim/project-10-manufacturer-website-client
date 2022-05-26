@@ -38,7 +38,7 @@ const Reviews = () => {
       });
   };
   return (
-    <div className="md:w-3/5 w-full bg-base-300 mx-auto p-3 rounded-lg pb-20 md:pb-0">
+    <div className="md:w-3/5 w-full bg-base-100 mx-auto p-3 rounded-lg pb-20 md:pb-0">
       <h1 className="text-4xl text-center capitalize my-3">Send a Review</h1>
       <hr />
       <form onSubmit={handleSubmit(onsubmit)} action="">

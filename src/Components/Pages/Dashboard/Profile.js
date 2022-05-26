@@ -14,7 +14,7 @@ const Profile = () => {
         .then(data=>setData(data))
     },[])
     return (
-        <div className='md:w-3/5 w-full bg-base-300 mx-auto p-3 rounded-lg pb-20 md:pb-0'>
+        <div className='md:w-3/5 w-full bg-base-100 mx-auto p-3 rounded-lg pb-20 md:pb-0'>
             <h1 className='text-4xl text-center capitalize'>Profile</h1> <hr />
             <div className='mt-5 flex flex-col justify-center items-center'>
                 <h3 className='text-3xl md:ml-5 my-3 uppercase '>{user?.displayName}</h3>

@@ -28,7 +28,7 @@ const Portfolio = () => {
         <div className="flex flex-col md:flex-row  justify-center md:justify-start items-center md:items-start  ">
           <div className="md:w-3/12 flex flex-col justify-center items-center">
             <div class="avatar  ">
-              <div class="md:w-36 w-36 border-2 rounded-xl">
+              <div class="md:w-36 w-36 mf:border-2 rounded-xl">
                 <img src={image} />
               </div>
             </div>
@@ -62,7 +62,7 @@ const Portfolio = () => {
                       <FontAwesomeIcon icon={faGraduationCap} />
                     </strong>
                     Honourse: Bsc In Zoology From Brindabon Govt: College,
-                    Hobibiganj,Sylhet.{" "}
+                    Hobiganj,Sylhet.{" "}
                   </p>
                   <p className="text-[16px] my-4">
                     <strong className="mr-2">

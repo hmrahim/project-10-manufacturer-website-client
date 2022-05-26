@@ -130,8 +130,8 @@ const UpdateProduct = () => {
                 <option disabled selected>
                   Who shot first?
                 </option>
-                <option>Han Solo</option>
-                <option>Greedo</option>
+                <option value="Electronics">Electronics</option>
+                <option value="Electric">Electric</option>
               </select>
               <label className="label"></label>
             </div>
